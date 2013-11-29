@@ -1,19 +1,28 @@
 # Cozy Code Guidelines
 
 ## Generic code style
+
 * lines must not be longer than 80 characters
 * indentation must be done with 4 spaces
-* variables name must not be abbreviated
-* variables names should be camelCase, starting with lowercase
-* class names should be CamelCase, starting with uppercase
 * file names should be in snake_case
+* variables name must not be abbreviated
+* class names should be CamelCase, starting with uppercase
 
 ## Coffeescript
 * no parenthesis in function declaration when it has no parameter
 * `or` and `and` must be used instead of `||` and `&&`
 * the `return` keyword should be explicit when needed
+* variables names should be camelCase, starting with lowercase
 
 ## Javascript
+
+* variables names should be camelCase, starting with lowercase
+
+## Pyhon
+
+* variables names should be snake_case, starting with lowercase
+* global variables should be written with uppercase
+* Files should be [pep8](http://www.python.org/dev/peps/pep-0008/) compliant
 
 ## Backbone
 
