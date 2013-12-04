@@ -7,6 +7,12 @@
 * file names should be in snake_case
 * variables name must not be abbreviated
 * class names should be CamelCase, starting with uppercase
+* no blank line at the end of files.
+
+## CSS / Stylus
+
+* all class names must be written in lowercase
+* layout attributes (margin, width...) must be placed before others.
 
 ## Coffeescript
 * no parenthesis in function declaration when it has no parameter
@@ -27,6 +33,7 @@
 ## Backbone
 
 ### Views
+
 Views should :
 - have the default Backbone constructor MyView(options)
 - not model.fetch() themselves
@@ -36,8 +43,9 @@ Views should :
 - have the same snake_case_file_name than their templates
 
 ## Node.js
-Catching process level exception may corrupt/leak memory, apps sould exit when it happens
-and let the cozy-controller restart them.
+
+Catching process level exception may corrupt/leak memory, apps sould exit when
+it happens and let the cozy-controller restart them.
 ```coffee
 process.on 'uncaughtException', (err) =>
    console.log err.stack
