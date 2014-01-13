@@ -4,7 +4,7 @@
 
 * lines must not be longer than 80 characters
 * indentation must be done with 4 spaces
-* file names should be in snake_case
+* file names should be in snake\_case
 * variables name must not be abbreviated
 * class names should be CamelCase, starting with uppercase
 * no blank line at the end of files.
@@ -26,7 +26,7 @@
 
 ## Pyhon
 
-* variables names should be snake_case, starting with lowercase
+* variables names should be snake\_case, starting with lowercase
 * global variables should be written with uppercase
 * Files should be [pep8](http://www.python.org/dev/peps/pep-0008/) compliant
 
@@ -40,12 +40,13 @@ Views should :
 - not render() themselves
 - not fail when rendered with a non-fetched Model
 - not fail when rendered multiple time
-- have the same snake_case_file_name than their templates
+- have the same snake\_case\_file\_name than their templates
 
 ## Node.js
 
 Catching process level exception may corrupt/leak memory, apps sould exit when
 it happens and let the cozy-controller restart them.
+
 ```coffee
 process.on 'uncaughtException', (err) =>
    console.log err.stack
@@ -54,13 +55,43 @@ process.on 'uncaughtException', (err) =>
 
 ## Express / Americano
 
+### Instance routes
+
+When you write an API that works on a given instance of an object you should
+use the param function of Americano/Express. This function acts as a
+preprocessor to fetch given instance:
+
+In sever/controllers/routes.coffee:
+
+```coffee
+alarms = require './alarms'
+
+module.exports =
+    'alarmid':
+        param: alarms.fetch
+```
+
+In sever/controllers/alarms.coffee:
+
+```coffee
+module.exports.fetch = (req, res, next, id) ->
+    Alarm.find id, (err, alarm) =>
+        if err or not alarm
+            res.send error: true, msg: "Alarm not found", 404
+        else
+            req.alarm = alarm
+            next()
+```
+
 ### Errors
 
 With Express, use next to handle errors:
 
-    module.exports.doStuff = (req, res, next) =>
-        File.all (err, files) -
-            if err?
-                next err
-            else
-                res.send files
+```coffee
+module.exports.doStuff = (req, res, next) =>
+    File.all (err, files) -
+        if err?
+            next err
+        else
+            res.send files
+```
