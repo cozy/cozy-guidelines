@@ -24,7 +24,7 @@
 
 * variables names should be camelCase, starting with lowercase
 
-## Pyhon
+## Python
 
 * variables names should be snake\_case, starting with lowercase
 * global variables should be written with uppercase
