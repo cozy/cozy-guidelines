@@ -12,17 +12,20 @@
 ## CSS / Stylus
 
 * all class names must be written in lowercase
-* layout attributes (margin, width...) must be placed before others.
+* layout attributes (margin, width...) must be placed before others
 
 ## Coffeescript
+
 * no parenthesis in function declaration when it has no parameter
 * `or` and `and` must be used instead of `||` and `&&`
 * the `return` keyword should be explicit when needed
 * variables names should be camelCase, starting with lowercase
+* describe all options field in the comments
 
 ## Javascript
 
 * variables names should be camelCase, starting with lowercase
+* describe all options field in the comments
 
 ## Python
 
