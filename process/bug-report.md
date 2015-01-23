@@ -9,10 +9,10 @@ follow when it occurs:
 2. Developer assignment of the ticket + adding label `in progress` to the ticket
 3. Add a test to the test suite of the repository
 4. Open a Pull Request
-5. Once a developer is statisfied with his development he informs the right people
-    * Technical Referant of the repository for merging 
-      (discussion on the PR, mention the TR in the PR).
-    * Product Owner of the repository for closing the issue 
-      (discussion is made on the issue, add the label `QA` to the issue).
-6. if the PO finds something wrong, he changes the label `QA` to `retake`.
-7. If everything is ok, the TR merges the pull request and the PO closes the issue.
+5. Once a developer is statisfied with his development, he informs the 
+   Technical Referant of the repository for merging by tagging the PR with `good to merge`.
+   (discussion on the PR).
+6. The product Owner of the repository is requested for testing the fix by 
+   tagging the issue `QA` (discussion is made on the issue).
+7. If the PO finds something wrong, he changes the label `QA` to `retake`.
+8. If everything is ok, the change is published and the PO closes the issue.
