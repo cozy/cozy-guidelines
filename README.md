@@ -7,7 +7,8 @@
 * file names should be in snake\_case
 * variables name must not be abbreviated
 * class names should be CamelCase, starting with uppercase
-* no blank line at the end of files.
+* two blank lines between functions
+* one blank line at the end of files.
 
 ## CSS / Stylus
 
