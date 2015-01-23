@@ -1,6 +1,6 @@
 ## Bug report
 
-A bug can nr reported via several channels: Github, forum, Cozy Cloud 
+A bug can be reported via several channels: Github, forum, Cozy Cloud 
 contact email or directly from a friend. Here is the process to
 follow when it occurs:
 
