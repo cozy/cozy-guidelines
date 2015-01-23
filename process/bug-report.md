@@ -10,7 +10,7 @@ follow when it occurs:
 4. Open a Pull Request
 5. Once a developer is statisfied with his development he informs the right people
     * Technical Referant of the repository for merging 
-      (discussion on the PR, mention the RT in the PR).
+      (discussion on the PR, mention the TR in the PR).
     * Product Owner of the repository for closing the issue 
       (discussion is made on the issue, add the label `QA` to the issue).
 6. if the PO finds something wrong, he changes the label `QA` to `retake`.
