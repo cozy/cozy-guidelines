@@ -12,19 +12,22 @@
 ## CSS / Stylus
 
 * all class names must be written in lowercase
-* layout attributes (margin, width...) must be placed before others.
+* layout attributes (margin, width...) must be placed before others
 
 ## Coffeescript
+
 * no parenthesis in function declaration when it has no parameter
 * `or` and `and` must be used instead of `||` and `&&`
 * the `return` keyword should be explicit when needed
 * variables names should be camelCase, starting with lowercase
+* describe all options field in the comments
 
 ## Javascript
 
 * variables names should be camelCase, starting with lowercase
+* describe all options field in the comments
 
-## Pyhon
+## Python
 
 * variables names should be snake\_case, starting with lowercase
 * global variables should be written with uppercase
@@ -95,3 +98,21 @@ module.exports.doStuff = (req, res, next) =>
         else
             res.send files
 ```
+
+## What is Cozy?
+
+![Cozy Logo](https://raw.github.com/mycozycloud/cozy-setup/gh-pages/assets/images/happycloud.png)
+
+[Cozy](http://cozy.io) is a platform that brings all your web services in the
+same private space.  With it, your web apps and your devices can share data
+easily, providing you with a new experience. You can install Cozy on your own
+hardware where no one profiles you. 
+
+## Community 
+
+You can reach the Cozy Community by:
+
+* Chatting with us on IRC #cozycloud on irc.freenode.net
+* Posting on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
+* Posting issues on the [Github repos](https://github.com/mycozycloud/)
+* Mentioning us on [Twitter](http://twitter.com/mycozycloud)
