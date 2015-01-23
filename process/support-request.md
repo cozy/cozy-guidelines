@@ -12,7 +12,7 @@ via the forum, IRC or Cozy Cloud contact email.
     [Bug Report](https://github.com/cozy/cozy-guidelines/blob/master/process/bug-report.md) process.
   * If the problem can be solved, one answer should be enough
   * If the problem requires more work, an issue is 
-    opened on the dedicated repository with the tag `question`.
+    opened on the dedicated repository with the tag `question` and the user is informed.
 3. In the case of long assistance, when the issue is 
    answered the issue is closed:
   * Immediately after an acknowledgement of the user
