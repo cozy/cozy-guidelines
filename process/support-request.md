@@ -1,7 +1,7 @@
 ## Support Request
 
-Here is the process that occurs when a user require assistance 
-via the forum, IRC or Cozy Cloud contact email.
+Here is the process that occurs when a user requires assistance 
+via the forum, IRC or Cozy Cloud contact email:
 
 1. A team member answers to the user and invite him to share 
    his problem on the forum.
