@@ -16,3 +16,4 @@ follow when it occurs:
    tagging the issue `QA` (discussion is made on the issue).
 7. If the PO finds something wrong, he changes the label `QA` to `retake`.
 8. If everything is ok, the change is published and the PO closes the issue.
+9. The PO informs the user about the bug fix.
