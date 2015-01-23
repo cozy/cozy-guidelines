@@ -1,8 +1,8 @@
 ## Bug report
 
-A bug can reported via several channels: Github, forum, Cozy Cloud 
+A bug can nr reported via several channels: Github, forum, Cozy Cloud 
 contact email or directly from a friend. Here is the process to
-follow when it occurs
+follow when it occurs:
 
 1. Github ticket creation on the right repository
 2. Developer assignment of the ticket + adding label `in progress` to the ticket
