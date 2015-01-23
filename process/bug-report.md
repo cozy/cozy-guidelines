@@ -4,7 +4,8 @@ A bug can be reported via several channels: Github, forum, Cozy Cloud
 contact email or directly from a friend. Here is the process to
 follow when it occurs:
 
-1. Github ticket creation on the right repository
+1. Github issue creation on the right repository
+1bis. Answer to the user with a link to the issue.
 2. Developer assignment of the ticket + adding label `in progress` to the ticket
 3. Add a test to the test suite of the repository
 4. Open a Pull Request
