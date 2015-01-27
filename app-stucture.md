@@ -66,7 +66,7 @@ server.coffee # server, see below
 - **TL;DR;** there should be a very good reason for server.coffee to be different than
 ```coffee
 americano = apps 'americano'
-application = module.exports = (callback) ->
+application = module.exports.start = (callback) ->
     options =
         name: 'app-name'
         root: __dirname
