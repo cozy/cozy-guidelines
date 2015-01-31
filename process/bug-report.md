@@ -17,4 +17,4 @@ follow when it occurs:
 7. If the PO finds something wrong, he changes the label `QA` to `retake`.
 8. If everything is ok, the change is published 
 9. The PO informs the user about the bug fix and asks for a test.
-10. If everything is ok, the PO closes the issue.
+10. If everything is ok, the PO closes the issue else the process goes back to step 3.
