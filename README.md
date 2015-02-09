@@ -48,6 +48,8 @@ Views should :
 
 ## Node.js
 
+### Catching exception
+
 Catching process level exception may corrupt/leak memory, apps sould exit when
 it happens and let the cozy-controller restart them.
 
@@ -56,6 +58,16 @@ process.on 'uncaughtException', (err) =>
    console.log err.stack
    process.exit 1
 ```
+
+### Return Shortcuts
+
+Return shortcuts should not be used by default. They can be used to avoid branchings that have very few meaning. The most known case where it occurs is:
+
+```coffeescript
+myfunc (err) ->
+    return callback err if err
+```
+
 
 ## Express / Americano
 
