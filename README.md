@@ -99,9 +99,28 @@ module.exports.fetch = (req, res, next, id) ->
             next()
 ```
 
-### Errors
+### Response
 
-With Express, use next to handle errors:
+### Success response
+
+* Always set the proper status (`200` for success, `201` for creation, `204` for deletion).
+* Put objects as a response of a success.
+
+```coffeescript
+res.status(201).send(newContact)
+```
+
+### Error response
+
+Always returned error with the proper status too by using the `next` function from Express:
+
+```coffeescript
+err = new Error "Something wrong occured"
+err.status = 404
+return err
+```
+
+If the error status is 500, no need to specify it again:
 
 ```coffee
 module.exports.doStuff = (req, res, next) =>
