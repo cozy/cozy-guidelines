@@ -72,6 +72,7 @@ Here are the rules to follow when using locale keys:
 * key names must be no longer than 30 chars or 4 words
 * key names must be self-explicit
 * key names must be in english
+* key names are sorted by alphabetical order
 
 
 ## Express / Americano
