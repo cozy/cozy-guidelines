@@ -46,7 +46,10 @@ Views should :
 - not fail when rendered multiple time
 - have the same snake\_case\_file\_name than their templates
 
+
 ## Node.js
+
+### Catching exception
 
 Catching process level exception may corrupt/leak memory, apps sould exit when
 it happens and let the cozy-controller restart them.
@@ -56,7 +59,14 @@ process.on 'uncaughtException', (err) =>
    console.log err.stack
    process.exit 1
 ```
+### Return Shortcuts
 
+Return shortcuts should not be used by default. They can be used to avoid branchings that have very few meaning. The most known case where it occurs is:
+
+```coffeescript
+myfunc (err) ->
+    return callback err if err
+```
 
 ## Localisation
 
@@ -106,9 +116,28 @@ module.exports.fetch = (req, res, next, id) ->
 ```
 
 
-### Errors
+### Response
 
-With Express, use next to handle errors:
+### Success response
+
+* Always set the proper status (`200` for success, `201` for creation, `204` for deletion).
+* Put objects as a response of a success.
+
+```coffeescript
+res.status(201).send(newContact)
+```
+
+### Error response
+
+Always returned error with the proper status too by using the `next` function from Express:
+
+```coffeescript
+err = new Error "Something wrong occured"
+err.status = 404
+return err
+```
+
+If the error status is 500, no need to specify it again:
 
 ```coffee
 module.exports.doStuff = (req, res, next) =>
