@@ -72,14 +72,14 @@ myfunc (err) ->
 
 Localisation is based on keys. In the code, there is no string that is directly displayed. Every string should refer to a translation key. Translations keys are stored in localisation files named with the locale (`en` for English, `fr` for French, etc.).
 
-[Exemple of a localisation folder])(https://github.com/cozy/cozy-home/tree/master/client/app/locales)
+[Exemple of a localisation folder](https://github.com/cozy/cozy-home/tree/master/client/app/locales)
 
 Here are the rules to follow when using locale keys:
 
 * Separators are spaces, other separators must be discarded
 * The first word describes the context
 * key names must be lowercased
-* key names must be no longer than 30 chars or 4 words
+* key names must be no longer than 40 chars or 6 words
 * key names must be self-explicit
 * key names must be in english
 * key names are sorted by alphabetical order
