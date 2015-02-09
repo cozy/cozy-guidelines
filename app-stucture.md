@@ -54,11 +54,12 @@ README.md
 server.coffee # server, see below
 ```
 
-# Difference with current status
-- all apps have some `middlewares`, `helpers`, `lib` : it should be only helpers
-- some apps have the index.jade in client, it should be in views/server
+# About Helpers
+
+Helpers that don't require any module of the current app, should published on NPM and added as a dependency.
 
 # About server.coffee
+
 - server should be usable by directly calling it `coffee server.coffee`,`node build/server.js`
 - server should not autostart if required from another module (test, cozy-light)
 - server should respect HOST & PORT environement & bind to 127.0.0.1 by default
