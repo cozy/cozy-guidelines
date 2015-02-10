@@ -13,7 +13,45 @@
 ## CSS / Stylus
 
 * all class names must be written in lowercase
-* layout attributes (margin, width...) must be placed before others
+* avoid use of `#ids` in CSS rules
+* classes used for design (styles) are prefixed with `ui-` and must not be
+used to target elements in JS files
+* rules avoid using `{}`, `:` and `;` as they are optionnal in Stylus
+* nesting must not exceed 3 levels (except pseudo-classes styles)
+* 2 blank lines between root levels
+* declaration order should go from positionning to typography, such as :
+
+```stylus
+div
+    // Positionning
+    z-index  5
+    position absolute
+    top      0
+    left     0
+
+    // Box-model
+    display    block
+    box-sizing border-box
+    width      60vw
+    margin     0 auto
+
+    // Borders and padding
+    border        1px solid
+    border-radius 50%
+    padding       1em
+
+    // Colors
+    background-color black
+    color            white
+
+    // Typo
+    font-family MavenPro
+    font-size   1em
+    line-height 1.5em
+```
+
+* a `color` should comes with an explicit `background-color` declaration
+
 
 ## Coffeescript
 
@@ -155,9 +193,9 @@ module.exports.doStuff = (req, res, next) =>
 [Cozy](http://cozy.io) is a platform that brings all your web services in the
 same private space.  With it, your web apps and your devices can share data
 easily, providing you with a new experience. You can install Cozy on your own
-hardware where no one profiles you. 
+hardware where no one profiles you.
 
-## Community 
+## Community
 
 You can reach the Cozy Community by:
 
