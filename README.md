@@ -12,13 +12,14 @@
 
 ## CSS / Stylus
 
+* indentation must be done with 4 spaces
+* 2 blank lines between root levels
+* nesting must not exceed 3 levels (except pseudo-classes styles)
+* avoid use of `{}`, `:` and `;` as they are optionnal in Stylus
+* avoid use of `#ids` in CSS selectors
 * all class names must be written in lowercase
-* avoid use of `#ids` in CSS rules
 * classes used for design (styles) are prefixed with `ui-` and must not be
 used to target elements in JS files
-* rules avoid using `{}`, `:` and `;` as they are optionnal in Stylus
-* nesting must not exceed 3 levels (except pseudo-classes styles)
-* 2 blank lines between root levels
 * declaration order should go from positionning to typography, such as :
 
 ```stylus
