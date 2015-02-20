@@ -17,4 +17,5 @@ For projects based on huboard, there are other labels:
 * in progress: current issue a developer is working on
 * to merge: techinal review by the technical referent
 * qa: functional review by the product owner
+* done: completed but not published
 * published: published in a official version of the app/module
