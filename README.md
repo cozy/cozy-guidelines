@@ -61,6 +61,8 @@ div
 * the `return` keyword should be explicit when needed
 * variables names should be camelCase, starting with lowercase
 * describe all options field in the comments
+* `field: "value"` rather than `field : "value"`
+* space beetween `()` and `->` : `(abc) ->`
 
 ## Javascript
 
