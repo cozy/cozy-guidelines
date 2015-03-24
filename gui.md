@@ -64,7 +64,9 @@ The fonts.css file (see section below) comes with and up-to-date version of [Fon
 
 ### How to use it?
 
-To draw an ison, simply declares an element with the class `fa`. Convention use the `<i/>` element, but you can use it everywhere. Icon is drawn in the `:before` pseudo-element. List of icons is [available here](http://fortawesome.github.io/Font-Awesome/icons/).	
+To display an icon, simply declares an element with the class `fa`. Convention use the `<i/>` element, but you can use it everywhere. Icon is drawn in the `:before` pseudo-element. List of icons is [available here](http://fortawesome.github.io/Font-Awesome/icons/).
+
+
 ### Label in icon
 
 Icons are generally use as follow:
