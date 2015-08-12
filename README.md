@@ -58,6 +58,7 @@ div
 
 * no parenthesis in function declaration when it has no parameter
 * `or` and `and` must be used instead of `||` and `&&`
+* `not` must be used instead of `!`
 * the `return` keyword should be explicit when needed
 * variables names should be camelCase, starting with lowercase
 * describe all options field in the comments
