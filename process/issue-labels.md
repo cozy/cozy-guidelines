@@ -13,6 +13,7 @@ Two labels are used to add information about issue :
 
 * duplicate: this issue is already indicate in an other ticket
 * can't reproduce: we don't arrive to reproduce this issue
+* Good for first contribution: this issue is a good way to start development in Cozy
 
 ## Process-related
 
