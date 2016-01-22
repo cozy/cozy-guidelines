@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Cozy-guidelines by cozy</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Cozy-guidelines</h1>
+        <h2>Cozy Code Guidelines</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/cozy/cozy-guidelines/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/cozy/cozy-guidelines/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/cozy/cozy-guidelines" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="cozy-code-guidelines" class="anchor" href="#cozy-code-guidelines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cozy Code Guidelines</h1>
+
+<h2>
+<a id="generic-code-style" class="anchor" href="#generic-code-style" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generic code style</h2>
+
+<ul>
+<li>lines must not be longer than 80 characters</li>
+<li>indentation must be done with 4 spaces</li>
+<li>file names should be in snake_case</li>
+<li>variables name must not be abbreviated</li>
+<li>class names should be CamelCase, starting with uppercase</li>
+<li>two blank lines between functions</li>
+<li>one blank line at the end of files.</li>
+</ul>
+
+<h2>
+<a id="css--stylus" class="anchor" href="#css--stylus" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSS / Stylus</h2>
+
+<ul>
+<li>indentation must be done with 4 spaces</li>
+<li>2 blank lines between root levels</li>
+<li>nesting must not exceed 3 levels (except pseudo-classes styles)</li>
+<li>avoid use of <code>{}</code>, <code>:</code> and <code>;</code> as they are optionnal in Stylus</li>
+<li>avoid use of <code>#ids</code> in CSS selectors</li>
+<li>all class names must be written in lowercase</li>
+<li>classes used for design (styles) are prefixed with <code>ui-</code> and must not be
+used to target elements in JS files</li>
+<li>declaration order should go from positionning to typography, such as :</li>
+</ul>
+
+<div class="highlight highlight-source-stylus"><pre><span class="pl-ent">div</span>
+    <span class="pl-c">// Positionning</span>
+    <span class="pl-c1">z-index</span>  <span class="pl-c1">5</span>
+    <span class="pl-c1">position</span> <span class="pl-c1">absolute</span>
+    <span class="pl-c1">top</span>      <span class="pl-c1">0</span>
+    <span class="pl-c1">left</span>     <span class="pl-c1">0</span>
+
+    <span class="pl-c">// Box-model</span>
+    <span class="pl-c1">display</span>    <span class="pl-c1">block</span>
+    <span class="pl-c1">box-sizing</span> <span class="pl-c1">border-box</span>
+    <span class="pl-c1">width</span>      <span class="pl-c1">60<span class="pl-k">vw</span></span>
+    <span class="pl-c1">margin</span>     <span class="pl-c1">0</span> <span class="pl-c1">auto</span>
+
+    <span class="pl-c">// Borders and padding</span>
+    <span class="pl-c1">border</span>        <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span>
+    <span class="pl-c1">border-radius</span> <span class="pl-c1">50<span class="pl-k">%</span></span>
+    <span class="pl-c1">padding</span>       <span class="pl-c1">1<span class="pl-k">em</span></span>
+
+    <span class="pl-c">// Colors</span>
+    <span class="pl-c1">background-color</span> <span class="pl-c1">black</span>
+    <span class="pl-c1">color</span>            <span class="pl-c1">white</span>
+
+    <span class="pl-c">// Typo</span>
+    <span class="pl-c1">font-family</span> <span class="pl-smi">MavenPro</span>
+    <span class="pl-c1">font-size</span>   <span class="pl-c1">1<span class="pl-k">em</span></span>
+    <span class="pl-c1">line-height</span> <span class="pl-c1">1.5<span class="pl-k">em</span></span></pre></div>
+
+<ul>
+<li>a <code>color</code> should comes with an explicit <code>background-color</code> declaration</li>
+</ul>
+
+<h2>
+<a id="coffeescript" class="anchor" href="#coffeescript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coffeescript</h2>
+
+<ul>
+<li>no parenthesis in function declaration when it has no parameter</li>
+<li>
+<code>or</code> and <code>and</code> must be used instead of <code>||</code> and <code>&amp;&amp;</code>
+</li>
+<li>
+<code>not</code> must be used instead of <code>!</code>
+</li>
+<li>the <code>return</code> keyword should be explicit when needed</li>
+<li>variables names should be camelCase, starting with lowercase</li>
+<li>describe all options field in the comments</li>
+<li>
+<code>field: "value"</code> rather than <code>field : "value"</code>
+</li>
+<li>space beetween <code>()</code> and <code>-&gt;</code> : <code>(abc) -&gt;</code>
+</li>
+</ul>
+
+<h2>
+<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Javascript</h2>
+
+<ul>
+<li>variables names should be camelCase, starting with lowercase</li>
+<li>describe all options field in the comments</li>
+</ul>
+
+<h2>
+<a id="python" class="anchor" href="#python" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Python</h2>
+
+<ul>
+<li>variables names should be snake_case, starting with lowercase</li>
+<li>global variables should be written with uppercase</li>
+<li>Files should be <a href="http://www.python.org/dev/peps/pep-0008/">pep8</a> compliant</li>
+</ul>
+
+<h2>
+<a id="backbone" class="anchor" href="#backbone" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backbone</h2>
+
+<h3>
+<a id="views" class="anchor" href="#views" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Views</h3>
+
+<p>Views should :</p>
+
+<ul>
+<li>have the default Backbone constructor MyView(options)</li>
+<li>not model.fetch() themselves</li>
+<li>not render() themselves</li>
+<li>not fail when rendered with a non-fetched Model</li>
+<li>not fail when rendered multiple time</li>
+<li>have the same snake_case_file_name than their templates</li>
+</ul>
+
+<h2>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js</h2>
+
+<h3>
+<a id="catching-exception" class="anchor" href="#catching-exception" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Catching exception</h3>
+
+<p>Catching process level exception may corrupt/leak memory, apps sould exit when
+it happens and let the cozy-controller restart them.</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-c1">process</span>.<span class="pl-en">on </span><span class="pl-s"><span class="pl-pds">'</span>uncaughtException<span class="pl-pds">'</span></span>, <span class="pl-smi">(err)</span> <span class="pl-k">=&gt;</span>
+   <span class="pl-en">console</span>.<span class="pl-en">log </span>err.stack
+   <span class="pl-c1">process</span>.<span class="pl-en">exit </span><span class="pl-c1">1</span></pre></div>
+
+<h3>
+<a id="return-shortcuts" class="anchor" href="#return-shortcuts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Return Shortcuts</h3>
+
+<p>Return shortcuts should not be used by default. They can be used to avoid branchings that have very few meaning. The most known case where it occurs is:</p>
+
+<div class="highlight highlight-source-coffee"><pre>myfunc <span class="pl-smi">(err)</span> <span class="pl-k">-&gt;</span>
+    <span class="pl-k">return</span> <span class="pl-en">callback </span>err <span class="pl-k">if</span> err</pre></div>
+
+<h2>
+<a id="localisation" class="anchor" href="#localisation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Localisation</h2>
+
+<p>Localisation is based on keys. In the code, there is no string that is directly displayed. Every string should refer to a translation key. Translations keys are stored in localisation files named with the locale (<code>en</code> for English, <code>fr</code> for French, etc.).</p>
+
+<p><a href="https://github.com/cozy/cozy-home/tree/master/client/app/locales">Exemple of a localisation folder</a></p>
+
+<p>Here are the rules to follow when using locale keys:</p>
+
+<ul>
+<li>Separators are spaces, other separators must be discarded</li>
+<li>The first word describes the context</li>
+<li>key names must be lowercased</li>
+<li>key names must be no longer than 40 chars or 6 words</li>
+<li>key names must be self-explicit</li>
+<li>key names must be in english</li>
+<li>key names are sorted by alphabetical order</li>
+</ul>
+
+<h2>
+<a id="express--americano" class="anchor" href="#express--americano" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Express / Americano</h2>
+
+<h3>
+<a id="instance-routes" class="anchor" href="#instance-routes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instance routes</h3>
+
+<p>When you write an API that works on a given instance of an object you should
+use the param function of Americano/Express. This function acts as a
+preprocessor to fetch given instance:</p>
+
+<p>In sever/controllers/routes.coffee:</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-v"><span class="pl-v">alarms <span class="pl-k">=</span></span></span> <span class="pl-c1">require</span> <span class="pl-s"><span class="pl-pds">'</span>./alarms<span class="pl-pds">'</span></span>
+
+<span class="pl-v"><span class="pl-v">module.exports <span class="pl-k">=</span></span></span>
+    <span class="pl-s"><span class="pl-pds">'</span>alarmid<span class="pl-pds">'</span></span><span class="pl-k">:</span>
+        <span class="pl-v"><span class="pl-v">param:</span></span> alarms.fetch</pre></div>
+
+<p>In sever/controllers/alarms.coffee:</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-en">module.exports.fetch </span><span class="pl-k">=</span><span class="pl-smi"> <span class="pl-smi">(req, res, next, id)</span></span> <span class="pl-k"><span class="pl-k">-&gt;</span></span>
+    Alarm.<span class="pl-en">find </span>id, <span class="pl-smi">(err, alarm)</span> <span class="pl-k">=&gt;</span>
+        <span class="pl-k">if</span> err <span class="pl-k">or</span> <span class="pl-k">not</span> alarm
+            res.<span class="pl-en">send </span><span class="pl-v"><span class="pl-v">error:</span></span> <span class="pl-c1">true</span>, <span class="pl-v"><span class="pl-v">msg:</span></span> <span class="pl-s"><span class="pl-pds">"</span>Alarm not found<span class="pl-pds">"</span></span>, <span class="pl-c1">404</span>
+        <span class="pl-k">else</span>
+            <span class="pl-v"><span class="pl-v">req.alarm <span class="pl-k">=</span></span></span> alarm
+            <span class="pl-en">next</span>()</pre></div>
+
+<h3>
+<a id="response" class="anchor" href="#response" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Response</h3>
+
+<h3>
+<a id="success-response" class="anchor" href="#success-response" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Success response</h3>
+
+<ul>
+<li>Always set the proper status (<code>200</code> for success, <code>201</code> for creation, <code>204</code> for deletion).</li>
+<li>Put objects as a response of a success.</li>
+</ul>
+
+<div class="highlight highlight-source-coffee"><pre>res.<span class="pl-en">status</span>(<span class="pl-c1">201</span>).<span class="pl-en">send</span>(newContact)</pre></div>
+
+<h3>
+<a id="error-response" class="anchor" href="#error-response" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Error response</h3>
+
+<p>Always returned error with the proper status too by using the <code>next</code> function from Express:</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-v"><span class="pl-v">err <span class="pl-k">=</span></span></span> <span class="pl-k">new</span> <span class="pl-en">Error</span> <span class="pl-s"><span class="pl-pds">"</span>Something wrong occured<span class="pl-pds">"</span></span>
+<span class="pl-v"><span class="pl-v">err.status <span class="pl-k">=</span></span></span> <span class="pl-c1">404</span>
+<span class="pl-k">return</span> err</pre></div>
+
+<p>If the error status is 500, no need to specify it again:</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-en">module.exports.doStuff </span><span class="pl-k">=</span><span class="pl-smi"> <span class="pl-smi">(req, res, next)</span></span> <span class="pl-k"><span class="pl-k">=&gt;</span></span>
+    File.all (err, files) <span class="pl-k">-</span>
+        <span class="pl-k">if</span> err<span class="pl-k">?</span>
+            <span class="pl-en">next </span>err
+        <span class="pl-k">else</span>
+            res.<span class="pl-en">send </span>files</pre></div>
+
+<h2>
+<a id="what-is-cozy" class="anchor" href="#what-is-cozy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Cozy?</h2>
+
+<p><img src="https://raw.github.com/cozy/cozy-setup/gh-pages/assets/images/happycloud.png" alt="Cozy Logo"></p>
+
+<p><a href="http://cozy.io">Cozy</a> is a platform that brings all your web services in the
+same private space.  With it, your web apps and your devices can share data
+easily, providing you with a new experience. You can install Cozy on your own
+hardware where no one profiles you.</p>
+
+<h2>
+<a id="community" class="anchor" href="#community" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Community</h2>
+
+<p>You can reach the Cozy Community by:</p>
+
+<ul>
+<li>Chatting with us on IRC #cozycloud on irc.freenode.net</li>
+<li>Posting on our <a href="https://forum.cozy.io">Forum</a>
+</li>
+<li>Posting issues on the <a href="https://github.com/cozy/">Github repos</a>
+</li>
+<li>Mentioning us on <a href="http://twitter.com/mycozycloud">Twitter</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
