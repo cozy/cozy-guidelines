@@ -93,7 +93,7 @@ Views should :
 
 ### Catching exception
 
-Catching process level exception may corrupt/leak memory, apps sould exit when
+Catching process level exception may corrupt/leak memory, apps should exit when
 it happens and let the cozy-controller restart them.
 
 ```coffee
@@ -114,7 +114,7 @@ myfunc (err) ->
 
 Localisation is based on keys. In the code, there is no string that is directly displayed. Every string should refer to a translation key. Translations keys are stored in localisation files named with the locale (`en` for English, `fr` for French, etc.).
 
-[Exemple of a localisation folder](https://github.com/cozy/cozy-home/tree/master/client/app/locales)
+[Example of a localisation folder](https://github.com/cozy/cozy-home/tree/master/client/app/locales)
 
 Here are the rules to follow when using locale keys:
 
