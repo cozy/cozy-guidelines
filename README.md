@@ -3,7 +3,8 @@
 ## Generic code style
 
 * lines must not be longer than 80 characters
-* indentation must be done with 4 spaces
+* indentation must be done with 4 spaces for Coffeescript and Python. 
+* indentation must be done with 2 spaces for Javascript. 
 * file names should be in snake\_case
 * variables name must not be abbreviated
 * class names should be CamelCase, starting with uppercase
