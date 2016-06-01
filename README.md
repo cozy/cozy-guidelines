@@ -70,6 +70,7 @@ div
 
 * variables names should be camelCase, starting with lowercase
 * describe all options field in the comments
+* Javascript code should be linted via ESLint by using the configuration file located in this repository (`.eslintrc.json`)
 
 ## Python
 
