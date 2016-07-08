@@ -7,7 +7,7 @@ Note: This is a quick and dirty version of the GUI guidelines, and will be impro
 
 To match the Cozy branding, these fonts are recommended:
 
-- titles: Maven Pro
+- titles: Source Sans Pro
 - titles and labor: Source Sans Pro
 - fixed-width: Source Code Pro
 
