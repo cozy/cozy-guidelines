@@ -9,13 +9,14 @@
 - `<APP_MAINTAINER>`: Github main maintainer username (don't forget `@` :))
 - `<SLUG_TX>`: transifex app slug
 - `<SLUG_GH>`: Github repository slugname
+- `<SLUG_NPM>`: NPM slugname
 
 ---
 
 ![Travis build status shield](https://img.shields.io/travis/cozy/<APP_REPO>.svg)
-![NPM release version shield](https://img.shields.io/npm/v/npm.svg)
+![NPM release version shield](https://img.shields.io/npm/v/<SLUG_NPM>.svg)
 ![Github Release version shield](https://img.shields.io/github/release/cozy/<APP_REPO>.svg)
-![NPM Licence shield](https://img.shields.io/npm/l/express.svg)
+![NPM Licence shield](https://img.shields.io/npm/l/<SLUG_NPM>.svg)
 
 
 [Cozy][cozy] <APP_NAME>
@@ -41,7 +42,7 @@ Hack
 
 ### Install and run in dev mode
 
-Hacking the <APP_NAME> app requires you [setup a dev environment][setup].
+Hacking the <APP_NAME> app requires you to [setup a dev environment][setup].
 
 You can then clone the app repository and install dependencies:
 
@@ -80,7 +81,7 @@ $ npm install -g cozy-dev
 $ cozy-dev deploy <APP_PORT>
 ```
 
-and point your browser to your dev VM at http://localhost:9104, your app is now available in your dashboard.
+your app is available in your vm dashboard at http://localhost:9104.
 
 
 ### Tests
@@ -97,18 +98,19 @@ $ npm run test
 
 ### Resources
 
-All documentation is located in the `/docs` app directory. It provides an exhaustive documentation about worflows (installation, development, pull-requests…), architecture, code consistency, data structures, dependencies, and more.
+All documentation is located in the `/docs` app directory. It provides an exhaustive documentation about workflows (installation, development, pull-requests…), architecture, code consistency, data structures, dependencies, and more.
 
 Feel free to read it and fix / update it if needed, all comments and feedback to improve it are welcome!
 
 
 ### Open a Pull-Request
 
-If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! Our basic worflow is:
+If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! Our basic workflow is:
 
 - PR point to the `development` branch
 - You need to cover your code and feature by tests
 - You may add documentation in the `/docs` directory to explain your choices if needed
+- We recommend to use [task lists][checkbox] to explain steps / features in your PR
 - you do _not_ need to build app to submit a PR
 - you should update the Transifex source locale file if you modify it for your feature needs (see Localization section below)
 
@@ -164,3 +166,4 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 [mocha]: https://mochajs.org/
 [chai]: http://chaijs.com/
 [sinon]: http://sinonjs.org/
+[checkbox]: https://help.github.com/articles/basic-writing-and-formatting-syntax/#task-lists
