@@ -105,14 +105,7 @@ Feel free to read it and fix / update it if needed, all comments and feedback to
 
 ### Open a Pull-Request
 
-If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! Our basic workflow is:
-
-- PR point to the `development` branch
-- You need to cover your code and feature by tests
-- You may add documentation in the `/docs` directory to explain your choices if needed
-- We recommend to use [task lists][checkbox] to explain steps / features in your PR
-- you do _not_ need to build app to submit a PR
-- you should update the Transifex source locale file if you modify it for your feature needs (see Localization section below)
+If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about hopw to properly open pull-requests.
 
 
 Community
@@ -152,6 +145,7 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 [cozy]: https://cozy.io "Cozy Cloud"
 [setup]: https://dev.cozy.io/#set-up-the-development-environment "Cozy dev docs: Set up the Development Environment"
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
+[contribute]: https://github.com/cozy/<SLUG_GH>/blob/master/CONTRIBUTING.md
 [tx]: https://www.transifex.com/cozy/
 [tx-signin]: https://www.transifex.com/signin/
 [tx-app]: https://www.transifex.com/cozy/<SLUG_TX>/dashboard/
