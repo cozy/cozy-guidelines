@@ -117,7 +117,7 @@ Feel free to read it and fix / update it if needed, all comments and feedback to
 
 ### Open a Pull-Request
 
-If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about hopw to properly open pull-requests.
+If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
 
 
 Community
@@ -161,7 +161,7 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 [konnector-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/konnector.coffee
 [konnectors]: https://github.com/cozy-labs/konnectors
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
-[contribute]: https://github.com/cozy/<SLUG_GH>/blob/master/CONTRIBUTING.md
+[contribute]: CONTRIBUTING.md
 [tx]: https://www.transifex.com/cozy/
 [tx-signin]: https://www.transifex.com/signin/
 [tx-app]: https://www.transifex.com/cozy/<SLUG_TX>/dashboard/

@@ -107,7 +107,7 @@ Go to https://github.com/username/<SLUG_GH> and select your branch. Click the 'P
 Alternatively, you can use [hub] to open the pull request from your terminal:
 
 ```
-git pull-request -b development -m "My PR message" -o
+$ git pull-request -b development -m "My PR message" -o
 ```
 
 Pull requests are usually reviewed within a few days. If there are comments to address, apply your changes in a separate commit and push that to your branch. Post a comment in the pull request afterwards; GitHub doesn't send out notifications when you add commits.
