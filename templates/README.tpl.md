@@ -96,6 +96,18 @@ $ npm run test
 :pushpin: Don't forget to update / create new tests when you contribute to code to keep the app the consistent.
 
 
+## Models
+
+The Cozy datastore stores documents, which can be seen as JSON objects. A `doctype` is simply a declaration of the fields in a given JSON object, to store similar objects in an homogeneous fashion.
+
+Cozy ships a [built-in list of `doctypes`][doctypes] for representation of most of the common documents (Bills, Contacts, Events, ...).
+
+Whenever your app needs to use a given `doctype`, you should:
+
+- Check if this is a standard `doctype` defined in Cozy itself. If this is the case, you should add a model declaration in your app containing at least the fields listed in the [main fields list for this `doctype`][doctypes]. Note that you can extend the Cozy-provided `doctype` with your own customs fields. This is typically what is done in [Konnectors][konnectors] for the [Bill `doctype`][bill-doctype].
+- If no standards `doctypes` fit your needs, you should define your own `doctype` in your app. In this case, you do not have to put any field you want in your model, but you should crosscheck other cozy apps to try to homogeneize the names of your fields, so that your `doctype` data could be reused by other apps. This is typically the case for the [Konnector `doctype`][konnector-doctype] in [Konnectors][konnectors].
+
+
 ### Resources
 
 All documentation is located in the `/docs` app directory. It provides an exhaustive documentation about workflows (installation, development, pull-requests…), architecture, code consistency, data structures, dependencies, and more.
@@ -144,6 +156,10 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 
 [cozy]: https://cozy.io "Cozy Cloud"
 [setup]: https://dev.cozy.io/#set-up-the-development-environment "Cozy dev docs: Set up the Development Environment"
+[doctypes]: https://dev.cozy.io/#main-document-types
+[bill-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/bill.coffee
+[konnector-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/konnector.coffee
+[konnectors]: https://github.com/cozy-labs/konnectors
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
 [contribute]: https://github.com/cozy/<SLUG_GH>/blob/master/CONTRIBUTING.md
 [tx]: https://www.transifex.com/cozy/
