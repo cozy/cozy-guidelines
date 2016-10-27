@@ -3,7 +3,6 @@
 ** REMOVE THIS SECTION BEFORE PUBLISHING**
 
 - `<APP_NAME>`: the application name
-- `<APP_REPO>`: Github app repository name
 - `<APP_SHORT_DESCRIPTION>`: a quick app description
 - `<APP_PORT>`: app running port
 - `<APP_MAINTAINER>`: Github main maintainer username (don't forget `@` :))
@@ -13,13 +12,13 @@
 
 ---
 
-![Travis build status shield](https://img.shields.io/travis/cozy/<APP_REPO>.svg)
+![Travis build status shield](https://img.shields.io/travis/cozy/<SLUG_GH>.svg)
 ![NPM release version shield](https://img.shields.io/npm/v/<SLUG_NPM>.svg)
-![Github Release version shield](https://img.shields.io/github/release/cozy/<APP_REPO>.svg)
+![Github Release version shield](https://img.shields.io/github/release/cozy/<SLUG_GH>.svg)
 ![NPM Licence shield](https://img.shields.io/npm/l/<SLUG_NPM>.svg)
 
 
-[Cozy][cozy] <APP_NAME>
+[Cozy] <APP_NAME>
 =======================
 
 
@@ -28,7 +27,7 @@ What's Cozy?
 
 ![Cozy Logo](https://cdn.rawgit.com/cozy/cozy-guidelines/master/templates/cozy_logo_small.svg)
 
-[Cozy][cozy] is a platform that brings all your web services in the same private space.  With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
+[Cozy] is a platform that brings all your web services in the same private space.  With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
 
 
 What's <APP_NAME>?
@@ -104,8 +103,8 @@ Cozy ships a [built-in list of `doctypes`][doctypes] for representation of most 
 
 Whenever your app needs to use a given `doctype`, you should:
 
-- Check if this is a standard `doctype` defined in Cozy itself. If this is the case, you should add a model declaration in your app containing at least the fields listed in the [main fields list for this `doctype`][doctypes]. Note that you can extend the Cozy-provided `doctype` with your own customs fields. This is typically what is done in [Konnectors][konnectors] for the [Bill `doctype`][bill-doctype].
-- If no standards `doctypes` fit your needs, you should define your own `doctype` in your app. In this case, you do not have to put any field you want in your model, but you should crosscheck other cozy apps to try to homogeneize the names of your fields, so that your `doctype` data could be reused by other apps. This is typically the case for the [Konnector `doctype`][konnector-doctype] in [Konnectors][konnectors].
+- Check if this is a standard `doctype` defined in Cozy itself. If this is the case, you should add a model declaration in your app containing at least the fields listed in the [main fields list for this `doctype`][doctypes]. Note that you can extend the Cozy-provided `doctype` with your own customs fields. This is typically what is done in [Konnectors] for the [Bill `doctype`][bill-doctype].
+- If no standards `doctypes` fit your needs, you should define your own `doctype` in your app. In this case, you do not have to put any field you want in your model, but you should crosscheck other cozy apps to try to homogeneize the names of your fields, so that your `doctype` data could be reused by other apps. This is typically the case for the [Konnector `doctype`][konnector-doctype] in [Konnectors].
 
 
 ### Resources
