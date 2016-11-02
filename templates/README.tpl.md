@@ -14,7 +14,7 @@
 
 ![Travis build status shield](https://img.shields.io/travis/cozy/<SLUG_GH>.svg)
 ![NPM release version shield](https://img.shields.io/npm/v/<SLUG_NPM>.svg)
-![Github Release version shield](https://img.shields.io/github/release/cozy/<SLUG_GH>.svg)
+![Github Release version shield](https://img.shields.io/github/tag/cozy/<SLUG_GH>.svg)
 ![NPM Licence shield](https://img.shields.io/npm/l/<SLUG_NPM>.svg)
 
 
