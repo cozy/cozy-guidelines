@@ -39,6 +39,8 @@ What's <APP_NAME>?
 Hack
 ----
 
+_:pushpin: Note:_ we recommend to use [Yarn] instead of NPM for package management. Don't hesitate to [install][install-yarn] and use it for your Cozy projects, it's now our main node packages tool for Cozy official apps.
+
 ### Install and run in dev mode
 
 Hacking the <APP_NAME> app requires you to [setup a dev environment][setup].
@@ -48,16 +50,16 @@ You can then clone the app repository and install dependencies:
 ```sh
 $ git clone https://github.com/cozy/<SLUG_GH>.git
 $ cd <SLUG_GH>
-$ npm install
+$ yarn install
 ```
 
-:pushpin: If you use a node environment wrapper like [nvm] or [ndenv], don't forget to set your local node version before doing a `npm install`.
+:pushpin: If you use a node environment wrapper like [nvm] or [ndenv], don't forget to set your local node version before doing a `yarn install`.
 
 Cozy's apps use a standard set of _npm scripts_ to run common tasks. You can so start you development workflow with:
 
 ```sh
 $ cd <SLUG_GH>
-$ npm run watch
+$ yarn run watch
 ```
 
 and point your browser to http://localhost:<APP_PORT>.
@@ -70,13 +72,13 @@ You can easily view your current running app in your VM, use [cozy-dev]:
 ```sh
 # in a terminal, run your app in watch mode
 $ cd <SLUG_GH>
-$ npm run watch
+$ yarn run watch
 ```
 
 ```sh
 # in another terminal, install cozy-dev (first time) and run the deploy
 $ cd <SLUG_GH>
-$ npm install -g cozy-dev
+$ yarn global install cozy-dev
 $ cozy-dev deploy <APP_PORT>
 ```
 
@@ -89,7 +91,7 @@ Tests are run by [mocha] under the hood, and written using [chai] and [sinon]. Y
 
 ```sh
 $ cd <SLUG_GH>
-$ npm run test
+$ yarn test
 ```
 
 :pushpin: Don't forget to update / create new tests when you contribute to code to keep the app the consistent.
@@ -155,6 +157,8 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 
 [cozy]: https://cozy.io "Cozy Cloud"
 [setup]: https://dev.cozy.io/#set-up-the-development-environment "Cozy dev docs: Set up the Development Environment"
+[yarn]: https://yarnpkg.com/
+[yarn-install]: https://yarnpkg.com/en/docs/install
 [doctypes]: https://dev.cozy.io/#main-document-types
 [bill-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/bill.coffee
 [konnector-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/konnector.coffee
