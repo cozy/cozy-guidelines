@@ -65,6 +65,26 @@ $ yarn run watch
 and point your browser to http://localhost:<APP_PORT>.
 
 
+#### Note about Cozy-ui
+
+[Cozy-ui] is our frontend stack library that provides common styles and components accross the whole Cozy's apps. You can use it for you own application to follow the official Cozy's guidelines and styles. If you need to develop / hack cozy-ui, it's sometimes more useful to develop on it through another app. You can do it by cloning cozy-ui locally and link it to yarn local index:
+
+```sh
+git clone https://github.com/cozy/cozy-ui.git
+cd cozy-ui
+yarn link
+```
+
+then go back to your app project and replace the distributed cozy-ui module with the linked one:
+
+```sh
+cd <SLUG_GH>
+yarn link cozy-ui
+```
+
+You can now run the watch task and your project will hot-reload each times a cozy-ui source file is touched.
+
+
 ### Run it inside the VM
 
 You can easily view your current running app in your VM, use [cozy-dev]:
@@ -159,6 +179,7 @@ Cozy <APP_NAME> is developed by Cozy Cloud and distributed under the [AGPL v3 li
 [setup]: https://dev.cozy.io/#set-up-the-development-environment "Cozy dev docs: Set up the Development Environment"
 [yarn]: https://yarnpkg.com/
 [yarn-install]: https://yarnpkg.com/en/docs/install
+[cozy-ui]: https://github.com/cozy/cozy-ui
 [doctypes]: https://dev.cozy.io/#main-document-types
 [bill-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/bill.coffee
 [konnector-doctype]: https://github.com/cozy-labs/konnectors/blob/master/server/models/konnector.coffee
