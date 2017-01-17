@@ -12,7 +12,7 @@
 
 ---
 
-[![Travis build status shield](https://img.shields.io/travis/cozy/<SLUG_GH>.svg?branch=master)](https://travis-ci.org/cozy/<SLUG_GH>)
+[![Travis build status shield](https://img.shields.io/travis/cozy/<SLUG_GH>/master.svg)](https://travis-ci.org/cozy/<SLUG_GH>)
 [![NPM release version shield](https://img.shields.io/npm/v/<SLUG_NPM>.svg)](https://www.npmjs.com/package/<SLUG_NPM>)
 [![Github Release version shield](https://img.shields.io/github/tag/cozy/<SLUG_GH>.svg)](https://github.com/cozy/<SLUG_GH>/releases)
 [![NPM Licence shield](https://img.shields.io/npm/l/<SLUG_NPM>.svg)](https://github.com/cozy/<SLUG_GH>/blob/master/LICENSE)
