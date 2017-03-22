@@ -1,8 +1,1 @@
-title: Cozy-guidelines
-description: Cozy Code Guidelines
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-hacker
-
-gems:
-  - jekyll-mentions
+theme: jekyll-theme-cayman
