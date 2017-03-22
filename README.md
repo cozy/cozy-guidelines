@@ -4,6 +4,8 @@
 
 This document contains the coding guidelines for the Cozy Team.
 
+* [Git Workflow](./docs/git.md)
+
 
 ## What's Cozy?
 
