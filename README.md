@@ -18,6 +18,59 @@ Let the formatters do their jobs.
 
 Always use async / await when applicable.
 
+## Class constructors
+
+Avoid `constructor` if you can by leveraging `transform-class-properties`
+
+❌  Bad :
+
+```
+class MyComponent extends Component {
+  constructor () {
+    super()
+    this.state = { counter: 0 }
+  }
+}
+```
+
+✅  Good
+
+```
+class MyComponent extends Component {
+  this.state = { counter: 0 }
+}
+```
+
+## Binding event handlers
+
+Avoid binding event handlers in `constructor`, leverage `transform-class-properties`
+and arrow functions.
+
+❌  Bad :
+
+```
+class MyComponent extends Component {
+  constructor () {
+    super()
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick (ev) {
+    ...
+  }
+}
+```
+
+✅  Good
+
+```
+class MyComponent extends Component {
+  this.onClick = (ev) => {
+    ...
+  }
+}
+```
+
 ## What is Cozy?
 
 ![Cozy Logo](https://raw.github.com/cozy/cozy-setup/gh-pages/assets/images/happycloud.png)
