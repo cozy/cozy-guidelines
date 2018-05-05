@@ -91,6 +91,10 @@ class MyComponent extends Component {
 }
 ```
 
+# Cozy Logo
+
+![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
+
 ## What is Cozy?
 
 ![Cozy Logo](https://cdn.rawgit.com/cozy/cozy-guidelines/master/templates/cozy_logo_small.svg)
