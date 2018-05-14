@@ -18,6 +18,65 @@ Let the formatters do their jobs.
 
 Always use async / await when applicable.
 
+## Class constructors
+
+Avoid `constructor` if you can by leveraging [`transform-class-properties`](transform-class-properties).
+
+> Why ? Less lines, easier to read, no need to call `super()`.
+
+❌  Bad :
+
+```
+class MyComponent extends Component {
+  constructor () {
+    super()
+    this.state = { counter: 0 }
+  }
+}
+```
+
+✅  Good
+
+```
+class MyComponent extends Component {
+  state = { counter: 0 }
+}
+```
+
+## Binding event handlers
+
+Avoid binding event handlers in `constructor`, leverage `transform-class-properties`
+and arrow functions.
+
+> Why ? The [transform-class-properties](transform-class-properties)
+way makes it easy to see, when the method is defined, that it is bound to the class
+(whereas when using the constructor, you have to check the `constructor` to see if it is correctly bound).
+
+❌  Bad :
+
+```
+class MyComponent extends Component {
+  constructor () {
+    super()
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick (ev) {
+    ...
+  }
+}
+```
+
+✅  Good
+
+```
+class MyComponent extends Component {
+  onClick = ev => {
+    ...
+  }
+}
+```
+
 ## What is Cozy?
 
 ![Cozy Logo](https://cdn.rawgit.com/cozy/cozy-guidelines/master/templates/cozy_logo_small.svg)
@@ -35,3 +94,5 @@ You can reach the Cozy Community by:
 * Posting on our [Forum](https://forum.cozy.io)
 * Posting issues on the [Github repos](https://github.com/cozy/)
 * Mentioning us on [Twitter](http://twitter.com/mycozycloud)
+
+[transform-class-properties]: https://babeljs.io/docs/plugins/transform-class-properties/
