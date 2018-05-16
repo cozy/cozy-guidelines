@@ -14,9 +14,16 @@
 
 Let the formatters do their jobs.
 
+# JavaScript
+
 ## Promises vs async/await
 
-Always use async / await when applicable.
+Always use async / await when applicable, instead of Promises and `then()` chains.
+
+> Why ? Cleaner, Clearer, more readable, easier for handling errors
+> See https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9
+
+# React
 
 ## Class constructors
 
