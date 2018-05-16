@@ -16,6 +16,13 @@ Let the formatters do their jobs.
 
 # JavaScript
 
+## Return value
+
+Avoid using `undefined` and prefer returning `null`.
+
+> Why ? `undefined` is used for variable that have not been assigned yet. `null` is for a variable with no value.
+> See http://www.ecma-international.org/ecma-262/6.0/#sec-undefined-value, http://www.ecma-international.org/ecma-262/6.0/#sec-null-value
+
 ## Promises vs async/await
 
 Always use async / await when applicable, instead of Promises and `then()` chains.
