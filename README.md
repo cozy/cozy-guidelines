@@ -91,6 +91,16 @@ class MyComponent extends Component {
 }
 ```
 
+# Code organization
+
+## Ducks
+
+Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a duck.
+
+> Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With ducks, this is simplified since changes are made in one file instead of several.
+
+Read more : https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be
+
 # Cozy Logo
 
 ![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
