@@ -99,6 +99,8 @@ Actions, reducers, and potential helpers supporting the same functionality shoul
 
 > Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With ducks, this is simplified since changes are made in one file instead of several.
 
+Dumb components should be outside ducks (as they are not concerned with the store and could be extracted to the UI library) but their connected couterpart should be exported from the index.js of the duck. 
+
 Read more : https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be
 
 # Cozy Logo
