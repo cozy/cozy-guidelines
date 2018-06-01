@@ -119,7 +119,7 @@ src
 
 `src/greetings/components/Greeting.jsx`
 ```js
-export default ({ name }) => <div>Hello { name } !</div>
+export default ({ name }) => <div>Hello { name }!</div>
 ```
 
 ##### Redux related
@@ -127,7 +127,7 @@ export default ({ name }) => <div>Hello { name } !</div>
 `src/greetings/redux/index.js`
 
 ```js
-import Greeting from 'components/Greeting'
+import Greeting from '../components/Greeting'
 
 const initialState = {}
 
@@ -135,7 +135,7 @@ const initialState = {}
 ...
 
 // Reducers
-...
+const reducer = (state, action = {}) => state
 
 // Connected
 const mapStateToProps =  ({ name }) => name
@@ -145,6 +145,8 @@ export {
   /* actions */
   /* reducers */
 }
+
+export default reducer
 ```
 
 ##### Export both dumb and connected components with the index
@@ -154,18 +156,35 @@ export {
 ```js
 import { connect } from 'redux'
 import Greeting from './Greeting'
-import ConnectedGretting from './redux'
+import ConnectedGreeting from './redux'
 
 export {
   Greeting,
-  ConnectedGretting: connect(Greeting)
+  ConnectedGreeting: connect(Greeting)
 }
+```
+
+#### Usage in application
+
+```
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { Greeting, ConnectedGreeting, reducer } from './greetings'
+
+const store = createStore(reducer)
+
+const App = props => (
+  <Greeting name={Jon Snow} />
+  <Provider store={store}>
+    <ConnectedGreeting />
+  </Provider>
+)
 ```
 
 </p>
 </details>
 
-Read more : https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be
+Read more : https://github.com/erikras/ducks-modular-redux
 
 # Cozy Logo
 
