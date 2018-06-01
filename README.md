@@ -93,13 +93,78 @@ class MyComponent extends Component {
 
 # Code organization
 
-## Ducks
+## Modules
 
-Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a duck.
+Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folders. 
 
 > Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With ducks, this is simplified since changes are made in one file instead of several.
 
-Dumb components should be outside ducks (as they are not concerned with the store and could be extracted to the UI library) but their connected couterpart should be exported from the index.js of the duck. 
+Dumb components should be outside modules (as they are not concerned with the store and could be extracted to the UI library) but their connected couterpart should be exported from the index.js of the duck. 
+
+If you develop functionalities related to greetings, here is how you can structure your folders :
+
+```
+src
+├── greetings
+│   └── components
+│        └── __tests__
+│        └── Greeting.jsx
+│    └── redux
+│        └── index.js
+```
+
+<details>
+    <summary>See more</summary>
+<p>
+
+#### Dumb component 
+
+`components/Greeting/Greeting.js`
+```js
+export default ({ name }) => <div>Hello { name } !</div>
+```
+
+#### Redux related
+
+`greetings/redux/index.js`
+
+```js
+import Greeting from 'components/Greeting'
+
+const initialState = {}
+
+// Actions
+...
+
+// Reducers
+...
+
+// Connected
+const mapStateToProps =  ({ name }) => name
+const connect = connect(mapStateToProps)
+export {
+  connect,
+  /* actions */
+  /* reducers */
+}
+```
+
+#### Export both dumb and connected components with the index
+
+`components/Greeting/index.js`
+```js
+import { connect } from 'redux'
+import Greeting from './Greeting'
+import ConnectedGretting from './redux'
+
+export {
+  Greeting,
+  ConnectedGretting: connect(Greeting)
+}
+```
+
+</p>
+</details>
 
 Read more : https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be
 
