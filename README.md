@@ -95,11 +95,9 @@ class MyComponent extends Component {
 
 ## Modules
 
-Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folders. 
+Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folder. 
 
-> Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With ducks, this is simplified since changes are made in one file instead of several.
-
-Dumb components should be outside modules (as they are not concerned with the store and could be extracted to the UI library) but their connected couterpart should be exported from the index.js of the duck. 
+> Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With modules, this is simplified since changes are made in one file instead of several.
 
 If you develop functionalities related to greetings, here is how you can structure your folders :
 
@@ -117,16 +115,16 @@ src
     <summary>See more</summary>
 <p>
 
-#### Dumb component 
+##### Dumb component 
 
-`components/Greeting/Greeting.js`
+`src/greetings/components/Greeting.jsx`
 ```js
 export default ({ name }) => <div>Hello { name } !</div>
 ```
 
-#### Redux related
+##### Redux related
 
-`greetings/redux/index.js`
+`src/greetings/redux/index.js`
 
 ```js
 import Greeting from 'components/Greeting'
@@ -149,9 +147,10 @@ export {
 }
 ```
 
-#### Export both dumb and connected components with the index
+##### Export both dumb and connected components with the index
 
-`components/Greeting/index.js`
+`src/greetings/index.js
+`
 ```js
 import { connect } from 'redux'
 import Greeting from './Greeting'
