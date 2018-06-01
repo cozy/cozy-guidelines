@@ -91,6 +91,101 @@ class MyComponent extends Component {
 }
 ```
 
+# Code organization
+
+## Modules
+
+Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folder. 
+
+> Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With modules, this is simplified since changes are made in one file instead of several.
+
+If you develop functionalities related to greetings, here is how you can structure your folders :
+
+```
+src
+├── greetings
+│   └── components
+│        └── __tests__
+│        └── Greeting.jsx
+│    └── redux
+│        └── index.js
+```
+
+<details>
+    <summary>See more</summary>
+<p>
+
+##### Dumb component 
+
+`src/greetings/components/Greeting.jsx`
+```js
+export default ({ name }) => <div>Hello { name }!</div>
+```
+
+##### Redux related
+
+`src/greetings/redux/index.js`
+
+```js
+import Greeting from '../components/Greeting'
+
+const initialState = {}
+
+// Actions
+...
+
+// Reducers
+const reducer = (state, action = {}) => state
+
+// Connected
+const mapStateToProps =  ({ name }) => name
+const connect = connect(mapStateToProps)
+export {
+  connect,
+  /* actions */
+  /* reducers */
+}
+
+export default reducer
+```
+
+##### Export both dumb and connected components with the index
+
+`src/greetings/index.js
+`
+```js
+import { connect } from 'redux'
+import Greeting from './Greeting'
+import ConnectedGreeting from './redux'
+
+export {
+  Greeting,
+  ConnectedGreeting: connect(Greeting)
+}
+```
+
+#### Usage in application
+
+```
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { Greeting, ConnectedGreeting, reducer } from './greetings'
+
+const store = createStore(reducer)
+
+const App = props => (
+  <Greeting name={Jon Snow} />
+  <Provider store={store}>
+    <ConnectedGreeting />
+  </Provider>
+)
+```
+
+</p>
+</details>
+
+Read more : https://github.com/erikras/ducks-modular-redux
+
 # Cozy Logo
 
 ![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
