@@ -166,7 +166,7 @@ export {
 
 #### Usage in application
 
-```
+```js
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { Greeting, ConnectedGreeting, reducer } from './greetings'
