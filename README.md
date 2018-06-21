@@ -186,6 +186,135 @@ const App = props => (
 
 Read more : https://github.com/erikras/ducks-modular-redux
 
+## Commit messages
+
+A git repository lives with an history that let developers or automatic procedure to find useful information.
+
+They have to look like that:
+
+```
+type: subject
+
+optional body
+
+footer with references to issue tracker IDS
+```
+
+<details>
+    <summary>See more</summary>
+<p>
+
+##### Type
+
+One of:
+
+- __feat__: a new feature
+- __fix__: a bug fix
+- __docs__: changes to documentation
+- __style__: formatting, missing semi colons, etc; _no code change_
+- __refactor__: refactoring production code; _no behavior change_
+- __test__: adding tests, refactoring test; _no production code change_
+- __chore__: updating build tasks, package manager configs, etc; _no production code change_
+
+##### Subject
+
+Subjects should be no greater than 50 characters
+
+❌  Bad :
+
+```
+fix: When a list contains more than 50 items, the scroll is broken
+```
+
+✅  Good
+
+```
+fix: A too long list breaks the scrolling
+```
+
+Subjects should begin with a capital letter
+
+❌  Bad :
+
+```
+fix: a too long list breaks the scrolling
+```
+
+✅  Good
+
+```
+fix: A too long list breaks the scrolling
+```
+
+Subjects do not end with a period.
+
+❌  Bad :
+
+```
+fix: A too long list breaks the scrolling.
+```
+
+✅  Good
+
+```
+fix: A too long list breaks the scrolling
+```
+
+Use an imperative tone to describe what a commit does, rather than what it did
+
+❌  Bad :
+
+```
+fix: A List that were too large would break the scroll.
+```
+
+✅  Good
+
+```
+fix: A too long list breaks the scrolling
+```
+
+##### Body
+
+Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body __to explain the what and why of a commit, not the how__.
+
+When writing a body, the __blank line between the title and the body is required__ and you should __limit the length of each line to no more than 72 characters__.
+
+##### Footer
+
+The footer is optional and is used to reference issue tracker IDs.
+
+##### Example
+```git
+feat: Summarize changes in around 50 characters or less
+
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
+
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequenses of this
+change? Here's the place to explain them.
+
+Further paragraphs come after blank lines.
+
+ - Bullet points are okay, too
+
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
+
+If you use an issue tracker, put references to them at the bottom,
+like this:
+
+Resolves: #123
+See also: #456, #789
+```
+
 # Cozy Logo
 
 ![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
