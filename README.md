@@ -193,7 +193,7 @@ A git repository lives with an history that let developers or automatic procedur
 They have to look like that:
 
 ```
-type: subject
+type: Subject
 
 optional body
 
