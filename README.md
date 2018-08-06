@@ -345,7 +345,7 @@ See also: #456, #789
 
 ## Encrypted variables
 
-All encrypted variables must be set in `.travis.yml` not in Travis web interface.
+All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
 They should be preceded by the command to regenerate them. This makes regenerating
 the variables easy and all the build information is versionned and peer-reviewed.  
 
@@ -359,13 +359,13 @@ Example :
 
 ## Deploy
 
-Use `deploy` section of `travis.yml` instead of `after_success` along with checks on environment variables.
+Use the `deploy` section of `travis.yml` instead of `after_success` along with checks on environment variables.
 
-Travis has lot of documentation to deploy easily on npm, github pages ... you
+Travis has lots of documentation to easily deploy on npm, github pages, ... you
 can find documentation [here](https://docs.travis-ci.com/user/deployment/).
 
 If you want use a specific command use [script](https://docs.travis-ci.com/user/deployment/script/),
-but no environement variable with `after_success`.
+but avoid environement variable checks in `after_success`.
 
 ❌  Bad :
 
