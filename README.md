@@ -345,8 +345,9 @@ See also: #456, #789
 
 ## Encrypted variables
 
-All encrypted variables must be write on `.travis.yml` with the commande to
-regenerate it, no in Travis web interface.
+All encrypted variables must be set in `.travis.yml` not in Travis web interface.
+They should be preceded by the command to regenerate them, . This makes regenerating
+the variables and this way, all the build information is versionned and peer-reviewed.  
 
 Example :
 
@@ -358,11 +359,11 @@ Example :
 
 ## Deploy
 
-Travis have lot of documentation to deploy easily on npm, github pages ... you
+Travis has lot of documentation to deploy easily on npm, github pages ... you
 can find documentation [here](https://docs.travis-ci.com/user/deployment/).
 
-If you want use a specific command use [scrip](https://docs.travis-ci.com/user/deployment/script/),
-but please no variable environnement with `after_success`.
+If you want use a specific command use [script](https://docs.travis-ci.com/user/deployment/script/),
+but no variable environnement with `after_success`.
 
 ❌  Bad :
 
