@@ -219,7 +219,7 @@ A git repository lives with an history that let developers or automatic procedur
 They have to look like that:
 
 ```
-type: Subject
+type(optional scope): Subject
 
 optional body
 
@@ -241,6 +241,18 @@ One of:
 - __refactor__: refactoring production code; _no behavior change_
 - __test__: adding tests, refactoring test; _no production code change_
 - __chore__: updating build tasks, package manager configs, etc; _no production code change_
+
+##### Scope
+
+The scope should reflect the part of the codebase that is updated by the
+commit. It should be very concise (one or two words).
+
+Example :
+
+feat(Chart): Redraw on data update
+
+Here, the commit is updating the Chart component of the application. We know it
+directly from the commit message.
 
 ##### Subject
 
