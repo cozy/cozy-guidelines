@@ -346,8 +346,8 @@ See also: #456, #789
 ## Encrypted variables
 
 All encrypted variables must be set in `.travis.yml` not in Travis web interface.
-They should be preceded by the command to regenerate them, . This makes regenerating
-the variables and this way, all the build information is versionned and peer-reviewed.  
+They should be preceded by the command to regenerate them. This makes regenerating
+the variables easy and all the build information is versionned and peer-reviewed.  
 
 Example :
 
