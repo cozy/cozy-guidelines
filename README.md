@@ -359,11 +359,13 @@ Example :
 
 ## Deploy
 
+Use `deploy` section of `travis.yml` instead of `after_success` along with checks on environment variables.
+
 Travis has lot of documentation to deploy easily on npm, github pages ... you
 can find documentation [here](https://docs.travis-ci.com/user/deployment/).
 
 If you want use a specific command use [script](https://docs.travis-ci.com/user/deployment/script/),
-but no variable environnement with `after_success`.
+but no environement variable with `after_success`.
 
 ❌  Bad :
 
