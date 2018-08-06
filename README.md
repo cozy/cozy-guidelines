@@ -30,6 +30,32 @@ Always use async / await when applicable, instead of Promises and `then()` chain
 > Why ? Cleaner, Clearer, more readable, easier for handling errors
 > See https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9
 
+## Comments
+
+Only comments things that have business logic complexity.
+
+> Why ? Comments are an apology, not a requirement. Good code _mostly_ documents itself.
+> See https://github.com/ryanmcdermott/clean-code-javascript#comments
+
+❌ Bad :
+
+```
+// Initiate API UserData object, for checkFormLogin token
+const req1 = await request({
+  url: `https://www.deezer.com/ajax/gw-light.php?method=deezer.getUserData&input=3&api_version=1.0&api_token=&cid=`
+})
+```
+
+✅ Good
+
+```
+function initiateAPIForToken () {
+  return request({
+    url: `https://www.deezer.com/ajax/gw-light.php?method=deezer.getUserData&input=3&api_version=1.0&api_token=&cid=`
+  })
+}
+```
+
 # React
 
 ## Class constructors
