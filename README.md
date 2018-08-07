@@ -353,6 +353,53 @@ Resolves: #123
 See also: #456, #789
 ```
 
+# Travis
+
+## Encrypted variables
+
+All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
+They should be preceded by the command to regenerate them. This makes regenerating
+the variables easy and all the build information is versionned and peer-reviewed. 
+
+When using `travis encrypt` with the `--add` flag, `travis-cli` will reformat the entire `.travis.yml` file and remove all comments. We suggest not using this flag at all.
+
+Example :
+
+```yml
+# NPM_TOKEN
+# To generate a new key: travis encrypt NPM_TOKEN=<token> -r cozy/cozy-realtime
+- secure: WDFj9IULpiNSR6h/i8dtmbm+h4hMAUk8EA8wve9sPrJV1GL5qsMgreMYV7uMx7S93K7h1EoILzS1877tLWJJdQ7f7UgakOUVXb41s0GOfQRznDYivqllYE+X9eUkh8gOBjjCF8G3dW4+w4bbY2X97ZC5hhxwQb3DgKWNdOuGLZXZRVmVNLR0XcEkR8p1CKJe4p/iNwianj2L9Q3wk1QvrBP74lwIJIY0i692fW9SKya/BTWGV+9mgGnR8TkAZUViZT2NygNpYxF4NDcXm1Kv2Y47e9Nr9ekGHuzTcCvT/K3hlpxzjo9VgY4lFvjr5izJ/vTScfB0JuHUs3SQFtrz9yI5DBx4OuUm7iJre2dRfUflJhO4KiCtmbZMh7CnBiMSTWFxPHxiD9kZaDU5EunfCRkWcdeSQTwo5bvscHzha7QNUsdzp/xMvOyhqvmoxXapzxymRzRaYntnvkVCZSJIGzHcc9FhsPRd2AQGyk5uffK4lAOVQ+D+d0WCh+5NagEQSPJ6rymsraJpdvR7OBMXVVAmJs76MnNWCQ3DPozIDkNxTxiWWXC02FZBeKrdnVoSLNUCj4jvdLwi4FmQbi2JNMk5zdOojqtt66LiZ8LtjnHzUXZ2dhfRL0URQm97UVagVmWNkte/6PaS/UeHCr193cwthbSFnanjHDclP0eBjvE=
+```
+
+## Deploy
+
+Use the `deploy` section of `travis.yml` instead of `after_success` along with checks on environment variables.
+
+Travis has lots of documentation to easily deploy on npm, github pages, ... you
+can find documentation [here](https://docs.travis-ci.com/user/deployment/).
+
+If you want use a specific command use [script](https://docs.travis-ci.com/user/deployment/script/),
+but avoid environement variable checks in `after_success`.
+
+❌  Bad :
+
+```
+after_success:
+- test $TRAVIS_BRANCH = "master" && test $TRAVIS_REPO_SLUG = "cozy/cozy-realtime" && test $TRAVIS_PULL_REQUEST = "false" && yarn travis-deploy-once "yarn semantic-release"
+```
+
+✅  Good
+
+```
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: yarn travis-deploy-once "yarn semantic-release"
+  on:
+    branch: master
+    repo: cozy/cozy-realtime
+```
+
 # Cozy Logo
 
 ![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
