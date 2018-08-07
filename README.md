@@ -347,7 +347,9 @@ See also: #456, #789
 
 All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
 They should be preceded by the command to regenerate them. This makes regenerating
-the variables easy and all the build information is versionned and peer-reviewed.  
+the variables easy and all the build information is versionned and peer-reviewed. 
+
+When using `travis encrypt` with the `--add` flag, `travis-cli` will reformat the entire `.travis.yml` file and remove all comments. We suggest not using this flag at all.
 
 Example :
 
