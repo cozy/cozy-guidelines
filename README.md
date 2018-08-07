@@ -314,7 +314,7 @@ fix: A too long list breaks the scrolling
 
 📌 A note about emojis in commit message
 
-You can use emoji as UTF character in your commit subject but, if so, you should add it at the end of it.
+You can use emojis in your commit subject but, if so, you should add it at the end of it.
 You can also use emojis in body message anyway you want.
 
 ❌  Bad :
