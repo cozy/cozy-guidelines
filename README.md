@@ -312,6 +312,26 @@ fix: A List that were too large would break the scroll.
 fix: A too long list breaks the scrolling
 ```
 
+📌 A note about emojis in commit message
+
+You can use emojis in your commit subject but, if so, you should add it after the type.
+You can also use emojis in body message anyway you want.
+
+❌  Bad :
+
+```
+🚑 fix: A List that were too large would break the scroll.
+```
+
+✅  Good
+
+```
+fix: A too long list breaks the scrolling 🚑
+fix: 🚑 A too long list breaks the scrolling
+```
+
+[Suggested Emoji/task relations](https://github.com/slashsBin/styleguide-git-commit-message#suggested-emojis)
+
 ##### Body
 
 Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body __to explain the what and why of a commit, not the how__.
