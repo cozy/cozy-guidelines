@@ -131,7 +131,6 @@ If you develop functionalities related to greetings, here is how you can structu
 src
 ├── greetings
 │   └── components
-│        └── __tests__
 │        └── Greeting.jsx
 │    └── redux
 │        └── index.js
@@ -205,6 +204,31 @@ const App = props => (
     <ConnectedGreeting />
   </Provider>
 )
+```
+
+## Tests
+
+Test files should be located next to their source file, rather then in a subfolder (for example `__tests__`).
+
+✅  Good
+
+```
+src
+├── greetings
+│   └── components
+│        └── Greeting.jsx
+│        └── Greeting.spec.js
+```
+
+❌  Bad
+
+```
+src
+├── greetings
+│   └── components
+│        └── Greeting.js
+│        └── __tests__
+│            └── Greeting.spec.jsx
 ```
 
 </p>
