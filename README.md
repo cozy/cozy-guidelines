@@ -373,6 +373,9 @@ Resolves: #123
 See also: #456, #789
 ```
 
+</p>
+</details>
+
 # Travis
 
 ## Encrypted variables
