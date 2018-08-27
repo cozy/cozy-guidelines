@@ -208,9 +208,9 @@ const App = props => (
 
 ## Tests
 
-Test files should be located next to their source file, rather then in a subfolder (for example `__tests__`).
+Unit test files should be located next to their source file, rather then in a subfolder (for example `__tests__`). This keeps them closer to their source file and encourages their maintenance.
 
-✅  Good
+:+1: Cool
 
 ```
 src
@@ -218,17 +218,6 @@ src
 │   └── components
 │        └── Greeting.jsx
 │        └── Greeting.spec.js
-```
-
-❌  Bad
-
-```
-src
-├── greetings
-│   └── components
-│        └── Greeting.js
-│        └── __tests__
-│            └── Greeting.spec.jsx
 ```
 
 </p>
