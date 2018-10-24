@@ -206,6 +206,11 @@ const App = props => (
 )
 ```
 
+</p>
+</details>
+
+Read more : https://github.com/erikras/ducks-modular-redux
+
 ## Tests
 
 Unit test files should be located next to their source file, rather then in a subfolder (for example `__tests__`). This keeps them closer to their source file and encourages their maintenance.
@@ -220,10 +225,6 @@ src
 │        └── Greeting.spec.js
 ```
 
-</p>
-</details>
-
-Read more : https://github.com/erikras/ducks-modular-redux
 
 ## Commit messages
 
