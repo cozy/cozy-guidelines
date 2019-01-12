@@ -117,6 +117,10 @@ class MyComponent extends Component {
 }
 ```
 
+# CSS and Stylus
+
+CSS guidelines are based on [Cozy-UI Styleguide CSS guidelines](https://docs.cozy.io/cozy-ui/styleguide/).
+
 # Code organization
 
 ## Modules
