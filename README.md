@@ -85,23 +85,36 @@ class MyComponent extends Component {
 
 ## Binding event handlers
 
-Avoid binding event handlers in `constructor`, leverage `transform-class-properties`
+Bind event handlers in `constructor`, do not leverage `transform-class-properties`
 and arrow functions.
 
-> Why ? The [transform-class-properties](transform-class-properties)
-way makes it easy to see, when the method is defined, that it is bound to the class
-(whereas when using the constructor, you have to check the `constructor` to see if it is correctly bound).
+> Why ? 
+
+Mocking class property functions is difficult as they are compiled to be assigned
+to the instance at constructor time. 
+
+```js
+// example
+class Toto { a = () => {} }
+
+// transpiled
+class Toto {
+  constructor() {
+      super(this)
+      this.a = () => {}
+   }
+}
+```
+
+It is therefore not possible to do `jest.mock(Toto.prototype, 'a')`.
+
+See this thread for more information https://github.com/airbnb/enzyme/issues/1432#issuecomment-363889823
 
 ❌  Bad :
 
 ```
 class MyComponent extends Component {
-  constructor () {
-    super()
-    this.onClick = this.onClick.bind(this)
-  }
-
-  onClick (ev) {
+  onClick = ev => {
     ...
   }
 }
@@ -111,7 +124,12 @@ class MyComponent extends Component {
 
 ```
 class MyComponent extends Component {
-  onClick = ev => {
+  constructor () {
+    super()
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick (ev) {
     ...
   }
 }
