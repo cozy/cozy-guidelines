@@ -85,7 +85,7 @@ class MyComponent extends Component {
 
 ## Binding event handlers
 
-Binding event handlers in `constructor`, do not leverage `transform-class-properties`
+Bind event handlers in `constructor`, do not leverage `transform-class-properties`
 and arrow functions.
 
 > Why ? 
