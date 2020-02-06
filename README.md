@@ -88,10 +88,10 @@ class MyComponent extends Component {
 Bind event handlers in `constructor`, do not leverage `transform-class-properties`
 and arrow functions.
 
-> Why ? 
+> Why ?
 
 Mocking class property functions is difficult as they are compiled to be assigned
-to the instance at constructor time. 
+to the instance at constructor time.
 
 ```js
 // example
@@ -143,7 +143,7 @@ CSS guidelines are based on [Cozy-UI Styleguide CSS guidelines](https://docs.coz
 
 ## Modules
 
-Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folder. 
+Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folder.
 
 > Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With modules, this is simplified since changes are made in one file instead of several.
 
@@ -162,7 +162,7 @@ src
     <summary>See more</summary>
 <p>
 
-##### Dumb component 
+##### Dumb component
 
 `src/greetings/components/Greeting.jsx`
 ```js
@@ -412,13 +412,17 @@ See also: #456, #789
 </p>
 </details>
 
+### Breaking change
+
+Following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), each commit introducing a breaking change must have a `BREAKING CHANGE: description`. The description should contain a migration path, i.e. a way to overcome the change for the apps using the impacted code.
+
 # Travis
 
 ## Encrypted variables
 
 All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
 They should be preceded by the command to regenerate them. This makes regenerating
-the variables easy and all the build information is versionned and peer-reviewed. 
+the variables easy and all the build information is versionned and peer-reviewed.
 
 When using `travis encrypt` with the `--add` flag, `travis-cli` will reformat the entire `.travis.yml` file and remove all comments. We suggest not using this flag at all.
 
