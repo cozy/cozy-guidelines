@@ -14,6 +14,20 @@
 
 Let the formatters do their jobs.
 
+# Naming of Functions
+
+To name functions, you can use some keywords that everyone will understand, like those ones :
+
+`updateSomething` : should perform server-side updates
+
+`getSomething` : should access data without making a server side call
+
+`fetchSomething` : should access data by making a server side call
+
+`normalizeSomething` : should transform data to conform to a given schema or to make sure that is coherent with other documents
+
+`harmonizeSomething` : should tweak data a bit to work well with other items
+
 # JavaScript
 
 ## Return value
