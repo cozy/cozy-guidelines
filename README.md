@@ -149,9 +149,14 @@ class MyComponent extends Component {
 }
 ```
 
-# CSS and Stylus
+## Styling / theming
 
-CSS guidelines are based on [Cozy-UI Styleguide CSS guidelines](https://docs.cozy.io/cozy-ui/styleguide/).
+- Use components from cozy-ui when possible
+- You can also use material UI components directly since they are themed
+- When coding a component, try to avoid stylus and prefer material UI's default solutions for theming (withStyles)
+
+See also [cozy-ui guidelines on component development](https://github.com/cozy/cozy-ui/tree/master/docs#guidelines-for-component-development).
+
 
 # Code organization
 
