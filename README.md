@@ -1,19 +1,5 @@
 # Cozy Code Guidelines
 
-## Generic code style
-
-```
-"eslintConfig": {
-    "extends": ["eslint-config-cozy-app"]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  },
-```
-
-Let the formatters do their jobs.
-
 # Naming of Functions
 
 To name functions, you can use some keywords that everyone will understand, like those ones :
@@ -72,187 +58,25 @@ function initiateAPIForToken () {
 
 # React
 
-## Class constructors
-
-Avoid `constructor` if you can by leveraging [`transform-class-properties`](transform-class-properties).
-
-> Why ? Less lines, easier to read, no need to call `super()`.
-
-❌  Bad :
+## Generic code style
 
 ```
-class MyComponent extends Component {
-  constructor () {
-    super()
-    this.state = { counter: 0 }
+"eslintConfig": {
+    "extends": ["eslint-config-cozy-app"]
   }
-}
 ```
 
-✅  Good
-
-```
-class MyComponent extends Component {
-  state = { counter: 0 }
-}
-```
-
-## Binding event handlers
-
-Bind event handlers in `constructor`, do not leverage `transform-class-properties`
-and arrow functions.
-
-> Why ?
-
-Mocking class property functions is difficult as they are compiled to be assigned
-to the instance at constructor time.
-
-```js
-// example
-class Toto { a = () => {} }
-
-// transpiled
-class Toto {
-  constructor() {
-      super(this)
-      this.a = () => {}
-   }
-}
-```
-
-It is therefore not possible to do `jest.mock(Toto.prototype, 'a')`.
-
-See this thread for more information https://github.com/airbnb/enzyme/issues/1432#issuecomment-363889823
-
-❌  Bad :
-
-```
-class MyComponent extends Component {
-  onClick = ev => {
-    ...
-  }
-}
-```
-
-✅  Good
-
-```
-class MyComponent extends Component {
-  constructor () {
-    super()
-    this.onClick = this.onClick.bind(this)
-  }
-
-  onClick (ev) {
-    ...
-  }
-}
-```
+Let the formatters do their jobs.
 
 ## Styling / theming
 
 - Use components from cozy-ui when possible
-- You can also use material UI components directly since they are themed
 - When coding a component, try to avoid stylus and prefer material UI's default solutions for theming (withStyles)
 
 See also [cozy-ui guidelines on component development](https://github.com/cozy/cozy-ui/tree/master/docs#guidelines-for-component-development).
 
 
-# Code organization
-
-## Modules
-
-Actions, reducers, and potential helpers supporting the same functionality should be regrouped in a module folder.
-
-> Why ? Action and reducers are by their very nature tightly coupled. When separated, refactoring and adding new features leads to editing of several files with tiny changes. With modules, this is simplified since changes are made in one file instead of several.
-
-If you develop functionalities related to greetings, here is how you can structure your folders :
-
-```
-src
-├── greetings
-│   └── components
-│        └── Greeting.jsx
-│    └── redux
-│        └── index.js
-```
-
-<details>
-    <summary>See more</summary>
-<p>
-
-##### Dumb component
-
-`src/greetings/components/Greeting.jsx`
-```js
-export default ({ name }) => <div>Hello { name }!</div>
-```
-
-##### Redux related
-
-`src/greetings/redux/index.js`
-
-```js
-import Greeting from '../components/Greeting'
-
-const initialState = {}
-
-// Actions
-...
-
-// Reducers
-const reducer = (state, action = {}) => state
-
-// Connected
-const mapStateToProps =  ({ name }) => name
-const connect = connect(mapStateToProps)
-export {
-  connect,
-  /* actions */
-  /* reducers */
-}
-
-export default reducer
-```
-
-##### Export both dumb and connected components with the index
-
-`src/greetings/index.js
-`
-```js
-import { connect } from 'redux'
-import Greeting from './Greeting'
-import ConnectedGreeting from './redux'
-
-export {
-  Greeting,
-  ConnectedGreeting: connect(Greeting)
-}
-```
-
-#### Usage in application
-
-```js
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import { Greeting, ConnectedGreeting, reducer } from './greetings'
-
-const store = createStore(reducer)
-
-const App = props => (
-  <Greeting name={Jon Snow} />
-  <Provider store={store}>
-    <ConnectedGreeting />
-  </Provider>
-)
-```
-
-</p>
-</details>
-
-Read more : https://github.com/erikras/ducks-modular-redux
-
-## Tests
+# Tests
 
 Unit test files should be located next to their source file, rather then in a subfolder (for example `__tests__`). This keeps them closer to their source file and encourages their maintenance.
 
@@ -267,7 +91,7 @@ src
 ```
 
 
-## Commit messages
+# Commit messages
 
 A git repository lives with an history that let developers or automatic procedure to find useful information.
 
@@ -499,7 +323,7 @@ hardware where no one profiles you.
 
 You can reach the Cozy Community by:
 
-* Chatting with us on IRC #cozycloud on irc.freenode.net
+* Chatting with us on IRC [#cozycloud on Libera.Chat][libera]
 * Posting on our [Forum](https://forum.cozy.io)
 * Posting issues on the [Github repos](https://github.com/cozy/)
 * Mentioning us on [Twitter](http://twitter.com/mycozycloud)
