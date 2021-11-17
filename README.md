@@ -306,6 +306,12 @@ deploy:
     repo: cozy/cozy-realtime
 ```
 
+# Release process
+
+![Release Schema](./cozyreleasediagram.png)
+
+You can find more information about the recommended workflow [here](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-app-publish#recommended-workflow)
+
 # Cozy Logo
 
 ![Cozy Logo](./cozy_logo_small.svg?sanitize=true)
