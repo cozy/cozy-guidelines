@@ -91,6 +91,27 @@ src
 ```
 
 
+# Data Test Id
+
+In order to uniform `data-testid`, we decided to use only `data-testid`. It helps coherency when testing with Testing Library
+
+:+1: Cool
+
+```
+<div
+  data-testid="id-of-div-to-test"
+/>
+```
+
+❌  Bad :
+
+```
+
+<div
+  data-test-id="incorrect-way-to-use-data-testid"
+/>
+```
+
 # Commit messages
 
 A git repository lives with an history that let developers or automatic procedure to find useful information.
