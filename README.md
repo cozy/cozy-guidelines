@@ -68,6 +68,18 @@ function initiateAPIForToken () {
 
 Let the formatters do their jobs.
 
+## React Memo
+
+Usage of React.memo is quite tricky. We recommend to [use React.memo wisely](https://dmitripavlutin.com/use-react-memo-wisely/).
+We use React.memo only for **medium/big** component that renders **often** with the **same props**.
+
+![img](https://dmitripavlutin.com/static/c07d2ce4ede6301197b9605a75ae9b4e/5fd6b/when-to-use-react-memo-infographic.jpg)
+
+> Don't use memoization if you can't quantify the performance gains.
+
+Strictly, React uses memoization as a performance hint.
+While in most situations React avoids rendering a memoized component, you shouldn't count on that to prevent rendering.
+
 ## Styling / theming
 
 - Use components from cozy-ui when possible
