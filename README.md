@@ -70,7 +70,7 @@ Let the formatters do their jobs.
 
 ## React Memo
 
-Usage of React.memo is quite tricky. We recommend to [use React.memo wisely](https://dmitripavlutin.com/use-react-memo-wisely/).
+Usage of React.memo / useMemo / useCallback is quite tricky. We recommend to [use React.memo wisely](https://dmitripavlutin.com/use-react-memo-wisely/).
 We use React.memo only for **medium/big** component that renders **often** with the **same props**.
 
 ![img](https://dmitripavlutin.com/static/c07d2ce4ede6301197b9605a75ae9b4e/5fd6b/when-to-use-react-memo-infographic.jpg)
@@ -79,6 +79,21 @@ We use React.memo only for **medium/big** component that renders **often** with 
 
 Strictly, React uses memoization as a performance hint.
 While in most situations React avoids rendering a memoized component, you shouldn't count on that to prevent rendering.
+
+### Could I use Memoization?
+
+Use the [React profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) or [a profiling extension](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-devtools-profiler) to measure the benefits of applying React.memo().
+
+### Examples when to use memoization
+
+#### Live example
+In this [example](https://prateeksurana.me/blog/when-should-you-memoize-in-react/#memo), we have an example of (not so big) component rendering a lot (because of realtime values provided by usePokemon hook).
+
+#### Theoretical examples
+In Cozy application, we may consider using memoization inside:
+- Page / Views are big components, rendering a lot if they depend on props. 
+- slow calls to API (that lasts more than 200ms) that are not cached / using pouchdb
+- big operations (ex: increment to 10 000)
 
 ## Styling / theming
 
