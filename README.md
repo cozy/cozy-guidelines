@@ -139,6 +139,17 @@ In order to uniform `data-testid`, we decided to use only `data-testid`. It help
 />
 ```
 
+# Dependencies
+
+> 👉 No dependencies between Cozy Library
+
+A Cozy library should not add any other Cozy library.
+Those Cozy libraries should only be devDependencies + peerDependencies.
+
+Why?
+- in order to reduce library size
+- in order to avoid dependencies cycle
+
 # Commit messages
 
 A git repository lives with an history that let developers or automatic procedure to find useful information.
