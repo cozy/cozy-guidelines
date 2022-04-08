@@ -141,6 +141,25 @@ In order to uniform `data-testid`, we decided to use only `data-testid`. It help
 
 # Dependencies
 
+> 👉 Avoid directly calling Material-UI in Cozy Library and Cozy Application
+
+Apart from Cozy-UI, repository should prevent from requiring material-ui as dependency.
+
+> 👉 Inside Cozy library, any package except cozy-* or react or react-dom can be a dependency
+
+It's complicated to be sure that the application calling a cozy-library has any other dependency. 
+That's why it's recommended to use dependency (when called in the production code)  
+
+Example:
+- react-router-dom should be a dependency
+- eslint should be a devDependencies
+- cozy-ui should be a devDependencies and a peerDependencies
+
+
+<details>
+    <summary>See more about those rules</summary>
+<p>
+
 > 👉 No dependencies between Cozy Library
 
 A Cozy library should not add any other Cozy library.
@@ -149,6 +168,18 @@ Those Cozy libraries should only be devDependencies + peerDependencies.
 Why?
 - in order to reduce library size
 - in order to avoid dependencies cycle
+
+> 👉 No react or react-dom  as dependencies in Cozy Library
+
+A Cozy library should not add React or React-DOM.
+Those packages should only be devDependencies + peerDependencies.
+
+Why?
+- in order to have different versions of React and compatibility problem with Hooks
+
+We follow the practise of [Material-UI](https://github.com/mui/material-ui/blob/master/package.json) or [React-Query](https://github.com/tannerlinsley/react-query/blob/master/package.json)
+</p>
+</details>
 
 # Commit messages
 
