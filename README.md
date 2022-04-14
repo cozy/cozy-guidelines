@@ -1,5 +1,38 @@
 # Cozy Code Guidelines
 
+- [Naming of Functions](#naming-of-functions)
+- [JavaScript](#javascript)
+    * [Return value](#return-value)
+    * [Promises vs async/await](#promises-vs-async-await)
+    * [Comments](#comments)
+- [React](#react)
+    * [Generic code style](#generic-code-style)
+    * [React Memo](#react-memo)
+        + [Could I use Memoization?](#could-i-use-memoization-)
+        + [Examples when to use memoization](#examples-when-to-use-memoization)
+            - [Live example](#live-example)
+            - [Theoretical examples](#theoretical-examples)
+    * [Styling / theming](#styling---theming)
+- [Tests](#tests)
+- [Data Test Id](#data-test-id)
+- [Dependencies](#dependencies)
+- [Commit messages](#commit-messages)
+  * [Type](#type)
+  * [Scope](#scope)
+  * [Subject](#subject)
+  * [Body](#body)
+  * [Footer](#footer)
+  * [Example](#example)
+    + [Breaking change](#breaking-change)
+- [Travis](#travis)
+    * [Encrypted variables](#encrypted-variables)
+    * [Deploy](#deploy)
+- [Release process](#release-process)
+- [Cozy Logo](#cozy-logo)
+    * [What is Cozy?](#what-is-cozy-)
+    * [Community](#community)
+    
+
 # Naming of Functions
 
 To name functions, you can use some keywords that everyone will understand, like those ones :
