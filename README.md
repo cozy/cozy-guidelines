@@ -5,6 +5,7 @@
     * [Return value](#return-value)
     * [Promises vs async/await](#promises-vs-async-await)
     * [Comments](#comments)
+    * [Date](#date)
 - [React](#react)
     * [Generic code style](#generic-code-style)
     * [React Memo](#react-memo)
@@ -88,6 +89,29 @@ function initiateAPIForToken () {
   })
 }
 ```
+
+## Date
+
+Date management dependencies may increase app bundle and are not always useful.
+
+In order to uniform our usage of date management package, we discourage any use of `moment`
+The main reason is that project was built for the previous era of the JavaScript ecosystem and since September 2020, for [more details](https://momentjs.com/docs/#/-project-status/)
+
+[Looking for alternatives](https://blog.logrocket.com/4-alternatives-to-moment-js-for-internationalizing-dates/), we use in that order:
+
+###[JavaScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+Because nothing beats using native features:
+
+Especially
+- Intl.DateTimeFormat, which provides date and time formatting
+- Intl.RelativeTimeFormat, which provides language-sensitive easy-to-read phrases for dates and timestamps
+
+###[Date-fns](https://date-fns.org/)
+[Date-fns]((https://github.com/cozy/cozy-ui/blob/master/react/I18n/format.jsx#L1)) can be used directly inside our app.
+
+`const { f } = useI18n()`
+
+The whole configuration can be found inside [Cozy-UI/I18n folder](https://github.com/cozy/cozy-ui/blob/master/react/I18n)
 
 # React
 
