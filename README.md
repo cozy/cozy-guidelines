@@ -99,14 +99,14 @@ The main reason is that project was built for the previous era of the JavaScript
 
 [Looking for alternatives](https://blog.logrocket.com/4-alternatives-to-moment-js-for-internationalizing-dates/), we use in that order:
 
-###[JavaScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+### [JavaScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
 Because nothing beats using native features:
 
 Especially
 - Intl.DateTimeFormat, which provides date and time formatting
 - Intl.RelativeTimeFormat, which provides language-sensitive easy-to-read phrases for dates and timestamps
 
-###[Date-fns](https://date-fns.org/)
+### [Date-fns](https://date-fns.org/)
 [Date-fns]((https://github.com/cozy/cozy-ui/blob/master/react/I18n/format.jsx#L1)) can be used directly inside our app.
 
 `const { f } = useI18n()`
