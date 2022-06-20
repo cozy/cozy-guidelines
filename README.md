@@ -125,6 +125,10 @@ The whole configuration can be found inside [Cozy-UI/I18n folder](https://github
 
 Let the formatters do their jobs.
 
+## Prefer Functional Components
+
+For any new component in our codebase, we prefer using [functional component](https://github.com/tatethurston/eslint-plugin-react-prefer-function-component#motivation=)
+
 ## React Memo
 
 Usage of React.memo / useMemo / useCallback is quite tricky. We recommend to [use React.memo wisely](https://dmitripavlutin.com/use-react-memo-wisely/).
