@@ -17,6 +17,7 @@
 - [Tests](#tests)
 - [Data Test Id](#data-test-id)
 - [Dependencies](#dependencies)
+- [Unit Commit](#unit-commit)
 - [Commit messages](#commit-messages)
   * [Type](#type)
   * [Scope](#scope)
@@ -241,6 +242,12 @@ Why?
 We follow the practise of [Material-UI](https://github.com/mui/material-ui/blob/master/package.json) or [React-Query](https://github.com/tannerlinsley/react-query/blob/master/package.json)
 </p>
 </details>
+
+# Unit Commit
+
+Each dependency upgrade should be inside its own commit.
+
+This helps understanding which changes belong to dependency upgrade, and what belongs to the feature of the Pull Request. It is very useful when reverting commits.
 
 # Commit messages
 
