@@ -29,6 +29,7 @@
 - [Travis](#travis)
     * [Encrypted variables](#encrypted-variables)
     * [Deploy](#deploy)
+- [Feature flags](#feature-flags)
 - [Release process](#release-process)
 - [Cozy Logo](#cozy-logo)
     * [What is Cozy?](#what-is-cozy-)
@@ -477,6 +478,13 @@ deploy:
     branch: master
     repo: cozy/cozy-realtime
 ```
+
+# Feature flags
+
+Master must always be in a state ready to be deployed in production.
+That is why we use feature flags on each new routes or for each new features not ready to go to production.
+
+To understand better how feature flags works, have a look to our internal wiki.
 
 # Release process
 
