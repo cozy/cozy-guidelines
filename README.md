@@ -1,6 +1,7 @@
 # Cozy Code Guidelines
 
 - [Naming of Functions](#naming-of-functions)
+- [Naming of Queries](#naming-of-queries)
 - [JavaScript](#javascript)
     * [Return value](#return-value)
     * [Promises vs async/await](#promises-vs-async-await)
@@ -32,7 +33,7 @@
 - [Cozy Logo](#cozy-logo)
     * [What is Cozy?](#what-is-cozy-)
     * [Community](#community)
-    
+
 
 # Naming of Functions
 
@@ -47,6 +48,26 @@ To name functions, you can use some keywords that everyone will understand, like
 `normalizeSomething` : should transform data to conform to a given schema or to make sure that is coherent with other documents
 
 `harmonizeSomething` : should tweak data a bit to work well with other items
+
+# Naming of Queries
+
+By "naming queries" we mean defining the `as` attribute of the queries options usable in cozy-client:
+
+```
+const queryResult = useQuery(Q(DOCTYPE), {
+    as: ...,
+    fetchPolicy: ...
+  })
+```
+
+By default `as` must be defined according to the doctype used: `as: DOCTYPE`
+
+If the query can be built with parameters (in this case `id`, `account` and `date`), these parameters must be included after `id` by preceding them with a `/[PARAM_NAME]/` (note that this is unnecessary for `id`):
+
+```
+as: `${DOCTYPE}/${id}/account/${account}/date/${date}`
+```
+
 
 # JavaScript
 
