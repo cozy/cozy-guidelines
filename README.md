@@ -26,6 +26,7 @@
   * [Footer](#footer)
   * [Example](#example)
     + [Breaking change](#breaking-change)
+- [Pull requests](#pull-requests)
 - [Travis](#travis)
     * [Encrypted variables](#encrypted-variables)
     * [Deploy](#deploy)
@@ -173,7 +174,7 @@ In this [example](https://prateeksurana.me/blog/when-should-you-memoize-in-react
 
 #### Theoretical examples
 In Cozy application, we may consider using memoization inside:
-- Page / Views are big components, rendering a lot if they depend on props. 
+- Page / Views are big components, rendering a lot if they depend on props.
 - slow calls to API (that lasts more than 200ms) that are not cached / using pouchdb
 - big operations (ex: increment to 10 000)
 
@@ -229,8 +230,8 @@ Apart from Cozy-UI, repository should prevent from requiring material-ui as depe
 
 > 👉 Inside Cozy library, any package except cozy-* or react or react-dom can be a dependency
 
-It's complicated to be sure that the application calling a cozy-library has any other dependency. 
-That's why it's recommended to use dependency (when called in the production code)  
+It's complicated to be sure that the application calling a cozy-library has any other dependency.
+That's why it's recommended to use dependency (when called in the production code)
 
 Example:
 - react-router-dom should be a dependency
@@ -430,6 +431,16 @@ See also: #456, #789
 ### Breaking change
 
 Following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), each commit introducing a breaking change must have a `BREAKING CHANGE: description`. The description should contain a migration path, i.e. a way to overcome the change for the apps using the impacted code.
+
+# Pull requests
+
+Before merging a PR, the following things must have been done:
+
+- Faithful integration of the mockups at all screen sizes
+- Tested on supported browsers, including responsive mode
+- Localized in English and French
+- All changes have test coverage
+- Updated README & CHANGELOG, if necessary
 
 # Travis
 
