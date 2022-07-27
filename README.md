@@ -26,6 +26,7 @@
   * [Footer](#footer)
   * [Example](#example)
     + [Breaking change](#breaking-change)
+  * [Commit separation](#commit-separation)
 - [Pull requests](#pull-requests)
 - [Travis](#travis)
     * [Encrypted variables](#encrypted-variables)
@@ -267,7 +268,7 @@ We follow the practise of [Material-UI](https://github.com/mui/material-ui/blob/
 
 # Commit messages
 
-A git repository lives with an history that let developers or automatic procedure to find useful information.
+A git repository lives with a history that let developers or automatic procedure to find useful information.
 
 They have to look like that:
 
@@ -432,6 +433,12 @@ See also: #456, #789
 ### Breaking change
 
 Following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), each commit introducing a breaking change must have a `BREAKING CHANGE: description`. The description should contain a migration path, i.e. a way to overcome the change for the apps using the impacted code.
+
+## Commit separation
+
+We split commit to have unit commit.
+One commit for package update, then one commit for the feature for example.
+This way, reading commit history or reverting commit will be more simple.
 
 # Pull requests
 
