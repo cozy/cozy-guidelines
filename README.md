@@ -137,6 +137,11 @@ Especially
 
 The whole configuration can be found inside [Cozy-UI/I18n folder](https://github.com/cozy/cozy-ui/blob/master/react/I18n)
 
+## Redirections
+
+If you need to make a link between cozy's apps, you should always use AppLinker from Cozy-UI. It handles a lot of use cases (flagship app, mobile app...).
+Never rely on `window.location` in the cozy-apps' codebase. We do a few things that can have repercussion on this value. Always use the generateWebLink method. To use it, you'll have to get the subdomainType. And to get the subdomainType, you'll need to read it from the client: `const { subdomain: subDomainType } = client.getInstanceOptions()`
+
 # React
 
 ## Generic code style
