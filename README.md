@@ -21,12 +21,12 @@
 - [Unit Commit](#unit-commit)
 - [Commit messages](#commit-messages)
   * [Type](#type)
-  * [Scope](#scope)
+  * [Scope](#scope-optional)
   * [Subject](#subject)
-  * [Body](#body)
+  * [Body](#body-aka-commit-description-optional-but-recommended)
   * [Footer](#footer)
+  * [Breaking change](#breaking-change)
   * [Example](#example)
-    + [Breaking change](#breaking-change)
 - [Pull requests](#pull-requests)
 - [Travis](#travis)
     * [Encrypted variables](#encrypted-variables)
@@ -291,121 +291,77 @@ optional body
 footer with references to issue tracker IDS
 ```
 
-<details>
-    <summary>See more</summary>
-<p>
-
-##### Type
+### Type
 
 One of:
 
-- __feat__: a new feature
-- __fix__: a bug fix
-- __docs__: changes to documentation
-- __style__: formatting, missing semi colons, etc; _no code change_
-- __refactor__: refactoring production code; _no behavior change_
-- __test__: adding tests, refactoring test; _no production code change_
-- __chore__: updating build tasks, package manager configs, etc; _no production code change_
+- **feat**: a new feature
+- **fix**: a bug fix
+- **docs**: changes to documentation
+- **style**: formatting, missing semi colons, etc; _no code change_
+- **refactor**: refactoring production code; _no behavior change_
+- **test**: adding tests, refactoring test; _no production code change_
+- **chore**: updating build tasks, package manager configs, etc; _no production code change_
 
-##### Scope
+### Scope (optional)
 
-The scope should reflect the part of the codebase that is updated by the
-commit. It should be very concise (one or two words).
+The scope should reflect the part of the codebase, or a specific Component, that is updated by the commit. It should be very concise (one or two words).
 
-Example :
+Example: `feat(Chart): Redraw on data update`
 
-feat(Chart): Redraw on data update
+Here, the commit is updating the Chart component of the application. We know it directly from the commit message.
 
-Here, the commit is updating the Chart component of the application. We know it
-directly from the commit message.
+### Subject
 
-##### Subject
+Subjects should:
 
-Subjects should be no greater than 50 characters
-
-❌  Bad :
-
-```
-fix: When a list contains more than 50 items, the scroll is broken
-```
-
-✅  Good
-
-```
-fix: A too long list breaks the scrolling
-```
-
-Subjects should begin with a capital letter
-
-❌  Bad :
-
-```
-fix: a too long list breaks the scrolling
-```
-
-✅  Good
-
-```
-fix: A too long list breaks the scrolling
-```
-
-Subjects do not end with a period.
-
-❌  Bad :
-
-```
-fix: A too long list breaks the scrolling.
-```
-
-✅  Good
-
-```
-fix: A too long list breaks the scrolling
-```
-
-Use an imperative tone to describe what a commit does, rather than what it did
-
-❌  Bad :
-
-```
-fix: A List that were too large would break the scroll.
-```
-
-✅  Good
-
-```
-fix: A too long list breaks the scrolling
-```
+- ideally be no greater than 50 characters
+- begin with a capital letter
+- do not end with a period
+- use an imperative tone to describe what a commit does, rather than what it did
+- use the past tense for a fix
 
 📌 A note about emojis in commit message
 
-You can use emojis in your commit subject but, if so, you should add it after the type.
-You can also use emojis in body message anyway you want.
-
-❌  Bad :
-
-```
-🚑 fix: A List that were too large would break the scroll.
-```
-
-✅  Good
-
-```
-fix: A too long list breaks the scrolling 🚑
-fix: 🚑 A too long list breaks the scrolling
-```
-
+You can use emojis in your commit subject but, if so, you should add it after the type. You can also use emojis in body message anyway you want.
 [Suggested Emoji/task relations](https://github.com/slashsBin/styleguide-git-commit-message#suggested-emojis)
 
-##### Body
+```
+❌  Bad
+🚑 fix: when a list contains more than 50 items, the scroll is broken
 
-Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body __to explain the what and why of a commit, not the how__.
+✅  Good
+fix: A too long list broke the scrolling 🚑
+```
 
-When writing a body, the __blank line between the title and the body is required__ and you should __limit the length of each line to no more than 72 characters__.
+### Body aka commit description (optional but recommended)
 
-##### Footer
+Pay attention to commit descriptions. It is important that they describe the **why** of a solution and not only the what and especially the how. This makes it easier to understand architectural choices and decisions that seem clear at the time of implementation but will be much less clear to someone else in 6 months or 1 year.
+
+When writing a body, the **blank line between the title and the body is required** and you should **limit the length of each line to no more than 72 characters**.
+
+To summarize:
+
+- it explains the reason for the change
+- it's searchable
+- it tells a story
+- it makes everyone a little smarter
+- it builds compassion and trust
+
+For more details, see https://dhwthompson.com/2019/my-favourite-git-commit
+
+### Footer
 
 The footer is optional and is used to reference issue tracker IDs.
+
+### Breaking change
+
+Following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), each commit introducing a breaking change must have a `BREAKING CHANGE: description`. The description should contain a migration path, i.e. a way to overcome the change for the apps using the impacted code.
+
+
+<details>
+    <summary>See commit example here</summary>
+<p>
 
 ##### Example
 ```git
@@ -440,10 +396,6 @@ See also: #456, #789
 
 </p>
 </details>
-
-### Breaking change
-
-Following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), each commit introducing a breaking change must have a `BREAKING CHANGE: description`. The description should contain a migration path, i.e. a way to overcome the change for the apps using the impacted code.
 
 # Pull requests
 
