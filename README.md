@@ -273,7 +273,7 @@ We follow the practise of [Material-UI](https://github.com/mui/material-ui/blob/
 
 # Unit Commit
 
-Each dependency upgrade should be inside its own commit.
+Each dependency upgrade should be inside its own commit, with the possible changes required by the upgrade.
 
 This helps understanding which changes belong to dependency upgrade, and what belongs to the feature of the Pull Request. It is very useful when reverting commits.
 
