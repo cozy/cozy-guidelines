@@ -15,8 +15,10 @@
             - [Live example](#live-example)
             - [Theoretical examples](#theoretical-examples)
     * [Styling / theming](#styling---theming)
+    * [Test libraries and tools](#test-libraries-and-tools)
 - [Tests](#tests)
-- [Data Test Id](#data-test-id)
+  * [Unit test files](#unit-test-files)
+  * [Data Test Id](#data-test-id)
 - [Dependencies](#dependencies)
 - [Unit Commit](#unit-commit)
 - [Commit messages](#commit-messages)
@@ -192,8 +194,15 @@ In Cozy application, we may consider using memoization inside:
 
 See also [cozy-ui guidelines on component development](https://github.com/cozy/cozy-ui/tree/master/docs#guidelines-for-component-development).
 
+## Test libraries and tools
+
+- enzyme is deprecated. We use testing-library/react instead. It is always good to refactor an enzyme compliant test to a testing-library/react compliant test.
+- testcafe is deprecated.
+- We do not use snapshots anymore. Do not add new snapshots.  
 
 # Tests
+
+## Unit test files
 
 Unit test files should be located next to their source file, rather then in a subfolder (for example `__tests__`). This keeps them closer to their source file and encourages their maintenance.
 
@@ -208,7 +217,7 @@ src
 ```
 
 
-# Data Test Id
+## Data Test Id
 
 In order to uniform `data-testid`, we decided to use only `data-testid`. It helps coherency when testing with Testing Library
 
