@@ -44,15 +44,25 @@
 
 To name functions, you can use some keywords that everyone will understand, like those ones :
 
-`updateSomething` : should perform server-side updates
+`fetchSomething` : should access data by making a server side call
 
 `getSomething` : should access data without making a server side call
 
-`fetchSomething` : should access data by making a server side call
+`findSomething` : like the get, but with arguments
 
 `normalizeSomething` : should transform data to conform to a given schema or to make sure that is coherent with other documents
 
-`harmonizeSomething` : should tweak data a bit to work well with other items
+`saveSomething` : creates or updates a document
+
+`hasSomething` or `isSomething` : should describe a boolean variable
+
+`computeSomething` : create something from other elements
+
+`makeSomething` : create something from scratch
+
+`doSomethingAndForget` : to convert an async func `doSomething` to a sync one `doSomethingAndForget`
+
+`ensureSomething` : make sure something {is/has been} done
 
 # Naming of Queries
 
