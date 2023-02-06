@@ -1,43 +1,51 @@
 # Cozy Code Guidelines
 
+- [Cozy Code Guidelines](#cozy-code-guidelines)
 - [Naming of Functions](#naming-of-functions)
 - [Naming of Queries](#naming-of-queries)
 - [JavaScript](#javascript)
-    * [Return value](#return-value)
-    * [Promises vs async/await](#promises-vs-async-await)
-    * [Comments](#comments)
-    * [Date](#date)
+  - [Return value](#return-value)
+  - [Promises vs async/await](#promises-vs-asyncawait)
+  - [Comments](#comments)
+  - [Date](#date)
+    - [JavaScript Internationalization API](#javascript-internationalization-api)
+    - [Date-fns](#date-fns)
+  - [Redirections](#redirections)
 - [React](#react)
-    * [Generic code style](#generic-code-style)
-    * [React Memo](#react-memo)
-        + [Could I use Memoization?](#could-i-use-memoization-)
-        + [Examples when to use memoization](#examples-when-to-use-memoization)
-            - [Live example](#live-example)
-            - [Theoretical examples](#theoretical-examples)
-    * [Styling / theming](#styling---theming)
-    * [Test libraries and tools](#test-libraries-and-tools)
+  - [Generic code style](#generic-code-style)
+  - [Prefer Functional Components](#prefer-functional-components)
+  - [React Memo](#react-memo)
+    - [Could I use Memoization?](#could-i-use-memoization)
+    - [Examples when to use memoization](#examples-when-to-use-memoization)
+      - [Live example](#live-example)
+      - [Theoretical examples](#theoretical-examples)
+  - [Styling / theming](#styling--theming)
+  - [Test libraries and tools](#test-libraries-and-tools)
 - [Tests](#tests)
-  * [Unit test files](#unit-test-files)
-  * [Data Test Id](#data-test-id)
+  - [Unit test files](#unit-test-files)
+  - [Data Test Id](#data-test-id)
 - [Dependencies](#dependencies)
 - [Unit Commit](#unit-commit)
 - [Commit messages](#commit-messages)
-  * [Type](#type)
-  * [Scope](#scope-optional)
-  * [Subject](#subject)
-  * [Body](#body-aka-commit-description-optional-but-recommended)
-  * [Footer](#footer)
-  * [Breaking change](#breaking-change)
-  * [Example](#example)
+    - [Type](#type)
+    - [Scope (optional)](#scope-optional)
+    - [Subject](#subject)
+    - [Body aka commit description (optional but recommended)](#body-aka-commit-description-optional-but-recommended)
+    - [Footer](#footer)
+    - [Breaking change](#breaking-change)
+        - [Example](#example)
 - [Pull requests](#pull-requests)
 - [Travis](#travis)
-    * [Encrypted variables](#encrypted-variables)
-    * [Deploy](#deploy)
+  - [Deploy](#deploy)
+- [Secrets](#secrets)
+  - [Encrypted variables](#encrypted-variables)
+    - [Travis](#travis-1)
+  - [Secrets File](#secrets-file)
 - [Feature flags](#feature-flags)
 - [Release process](#release-process)
 - [Cozy Logo](#cozy-logo)
-    * [What is Cozy?](#what-is-cozy-)
-    * [Community](#community)
+  - [What is Cozy?](#what-is-cozy)
+  - [Community](#community)
 
 
 # Naming of Functions
@@ -428,22 +436,6 @@ Before merging a PR, the following things must have been done:
 
 # Travis
 
-## Encrypted variables
-
-All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
-They should be preceded by the command to regenerate them. This makes regenerating
-the variables easy and all the build information is versionned and peer-reviewed.
-
-When using `travis encrypt` with the `--add` flag, `travis-cli` will reformat the entire `.travis.yml` file and remove all comments. We suggest not using this flag at all.
-
-Example :
-
-```yml
-# NPM_TOKEN
-# To generate a new key: travis encrypt NPM_TOKEN=<token> -r cozy/cozy-realtime
-- secure: WDFj9IULpiNSR6h/i8dtmbm+h4hMAUk8EA8wve9sPrJV1GL5qsMgreMYV7uMx7S93K7h1EoILzS1877tLWJJdQ7f7UgakOUVXb41s0GOfQRznDYivqllYE+X9eUkh8gOBjjCF8G3dW4+w4bbY2X97ZC5hhxwQb3DgKWNdOuGLZXZRVmVNLR0XcEkR8p1CKJe4p/iNwianj2L9Q3wk1QvrBP74lwIJIY0i692fW9SKya/BTWGV+9mgGnR8TkAZUViZT2NygNpYxF4NDcXm1Kv2Y47e9Nr9ekGHuzTcCvT/K3hlpxzjo9VgY4lFvjr5izJ/vTScfB0JuHUs3SQFtrz9yI5DBx4OuUm7iJre2dRfUflJhO4KiCtmbZMh7CnBiMSTWFxPHxiD9kZaDU5EunfCRkWcdeSQTwo5bvscHzha7QNUsdzp/xMvOyhqvmoxXapzxymRzRaYntnvkVCZSJIGzHcc9FhsPRd2AQGyk5uffK4lAOVQ+D+d0WCh+5NagEQSPJ6rymsraJpdvR7OBMXVVAmJs76MnNWCQ3DPozIDkNxTxiWWXC02FZBeKrdnVoSLNUCj4jvdLwi4FmQbi2JNMk5zdOojqtt66LiZ8LtjnHzUXZ2dhfRL0URQm97UVagVmWNkte/6PaS/UeHCr193cwthbSFnanjHDclP0eBjvE=
-```
-
 ## Deploy
 
 Use the `deploy` section of `travis.yml` instead of `after_success` along with checks on environment variables.
@@ -472,6 +464,30 @@ deploy:
     branch: master
     repo: cozy/cozy-realtime
 ```
+
+# Secrets
+
+## Encrypted variables
+
+### Travis 
+
+All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
+They should be preceded by the command to regenerate them. This makes regenerating
+the variables easy and all the build information is versionned and peer-reviewed.
+
+When using `travis encrypt` with the `--add` flag, `travis-cli` will reformat the entire `.travis.yml` file and remove all comments. We suggest not using this flag at all.
+
+Example :
+
+```yml
+# NPM_TOKEN
+# To generate a new key: travis encrypt NPM_TOKEN=<token> -r cozy/cozy-realtime
+- secure: WDFj9IULpiNSR6h/i8dtmbm+h4hMAUk8EA8wve9sPrJV1GL5qsMgreMYV7uMx7S93K7h1EoILzS1877tLWJJdQ7f7UgakOUVXb41s0GOfQRznDYivqllYE+X9eUkh8gOBjjCF8G3dW4+w4bbY2X97ZC5hhxwQb3DgKWNdOuGLZXZRVmVNLR0XcEkR8p1CKJe4p/iNwianj2L9Q3wk1QvrBP74lwIJIY0i692fW9SKya/BTWGV+9mgGnR8TkAZUViZT2NygNpYxF4NDcXm1Kv2Y47e9Nr9ekGHuzTcCvT/K3hlpxzjo9VgY4lFvjr5izJ/vTScfB0JuHUs3SQFtrz9yI5DBx4OuUm7iJre2dRfUflJhO4KiCtmbZMh7CnBiMSTWFxPHxiD9kZaDU5EunfCRkWcdeSQTwo5bvscHzha7QNUsdzp/xMvOyhqvmoxXapzxymRzRaYntnvkVCZSJIGzHcc9FhsPRd2AQGyk5uffK4lAOVQ+D+d0WCh+5NagEQSPJ6rymsraJpdvR7OBMXVVAmJs76MnNWCQ3DPozIDkNxTxiWWXC02FZBeKrdnVoSLNUCj4jvdLwi4FmQbi2JNMk5zdOojqtt66LiZ8LtjnHzUXZ2dhfRL0URQm97UVagVmWNkte/6PaS/UeHCr193cwthbSFnanjHDclP0eBjvE=
+```
+
+## Secrets File 
+
+By default secrets file should not been versionned. But if the file will be available on the client side of your application, then we consider it public as said by firebase here (https://firebase.google.com/docs/projects/learn-more#config-files-objects). For instance, file as `google-services.json` can be versionned in our github repository. If you add this kind of file, please share the word on our security channel.
 
 # Feature flags
 
