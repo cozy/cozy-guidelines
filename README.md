@@ -2,6 +2,7 @@
 
 - [Naming of Functions](#naming-of-functions)
 - [Naming of Queries](#naming-of-queries)
+- [Import order](#import-order)
 - [JavaScript](#javascript)
     * [Return value](#return-value)
     * [Promises vs async/await](#promises-vs-async-await)
@@ -83,6 +84,15 @@ If the query can be built with parameters (in this case `id`, `account` and `dat
 as: `${DOCTYPE}/${id}/account/${account}/date/${date}`
 ```
 
+# Import order
+```js
+import libs from externals // (ex: lodash)
+
+import libs from internal // (ex: cozy-client)
+
+import libs from local // (absolute or relative path, depending on the project)
+import styles from local // (absolute or relative path, depending on the project)
+```
 
 # JavaScript
 
@@ -208,7 +218,7 @@ See also [cozy-ui guidelines on component development](https://github.com/cozy/c
 
 - enzyme is deprecated. We use testing-library/react instead. It is always good to refactor an enzyme compliant test to a testing-library/react compliant test.
 - testcafe is deprecated.
-- We do not use snapshots anymore. Do not add new snapshots.  
+- We do not use snapshots anymore. Do not add new snapshots.
 
 # Tests
 
