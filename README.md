@@ -219,6 +219,12 @@ In Cozy application, we may consider using memoization inside:
 - slow calls to API (that lasts more than 200ms) that are not cached / using pouchdb
 - big operations (ex: increment to 10 000)
 
+## Event handling
+
+Prefer named function instead of inline function into event handler.
+
+With Typescript, if you have trouble with eslint rule `no-misused-promises` because your function is returning an `Promise<void>`. You can disable this rule for your specific case
+
 ## Styling / theming
 
 - Use components from cozy-ui when possible
