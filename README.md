@@ -244,6 +244,18 @@ src
 │        └── Greeting.spec.js
 ```
 
+❌ Bad
+
+```
+src
+├── greetings
+│   └── components
+│        └── Greeting.jsx
+test
+├── greetings
+│   └── components
+│        └── Greeting.spec.js
+```
 
 ## Data Test Id
 
@@ -265,6 +277,20 @@ In order to uniform `data-testid`, we decided to use only `data-testid`. It help
   data-test-id="incorrect-way-to-use-data-testid"
 />
 ```
+
+## queryBy ⚡️ toBeDefined
+`queryBy*` methods return an array of Element(s) or `null` and `.toBeDefined()` fail only if value is `undefined`
+
+:+1: Cool
+```
+expect(queryByTestId('foo')).toBeInDocument()
+expect(queryByTestId('foo')).toBe(null)
+```
+❌  Bad :
+```
+expect(queryByTestId('foo')).toBeDefined()
+```
+See: https://testing-library.com/docs/queries/about/#types-of-queries
 
 # Dependencies
 
@@ -479,7 +505,7 @@ deploy:
 
 ## Encrypted variables
 
-### Travis 
+### Travis
 
 All encrypted variables must be set in `.travis.yml` not in the Travis web interface.
 They should be preceded by the command to regenerate them. This makes regenerating
@@ -495,7 +521,7 @@ Example :
 - secure: WDFj9IULpiNSR6h/i8dtmbm+h4hMAUk8EA8wve9sPrJV1GL5qsMgreMYV7uMx7S93K7h1EoILzS1877tLWJJdQ7f7UgakOUVXb41s0GOfQRznDYivqllYE+X9eUkh8gOBjjCF8G3dW4+w4bbY2X97ZC5hhxwQb3DgKWNdOuGLZXZRVmVNLR0XcEkR8p1CKJe4p/iNwianj2L9Q3wk1QvrBP74lwIJIY0i692fW9SKya/BTWGV+9mgGnR8TkAZUViZT2NygNpYxF4NDcXm1Kv2Y47e9Nr9ekGHuzTcCvT/K3hlpxzjo9VgY4lFvjr5izJ/vTScfB0JuHUs3SQFtrz9yI5DBx4OuUm7iJre2dRfUflJhO4KiCtmbZMh7CnBiMSTWFxPHxiD9kZaDU5EunfCRkWcdeSQTwo5bvscHzha7QNUsdzp/xMvOyhqvmoxXapzxymRzRaYntnvkVCZSJIGzHcc9FhsPRd2AQGyk5uffK4lAOVQ+D+d0WCh+5NagEQSPJ6rymsraJpdvR7OBMXVVAmJs76MnNWCQ3DPozIDkNxTxiWWXC02FZBeKrdnVoSLNUCj4jvdLwi4FmQbi2JNMk5zdOojqtt66LiZ8LtjnHzUXZ2dhfRL0URQm97UVagVmWNkte/6PaS/UeHCr193cwthbSFnanjHDclP0eBjvE=
 ```
 
-## Secrets File 
+## Secrets File
 
 By default secrets file should not been versionned. But if the file will be available on the client side of your application, then we consider it public as said by firebase here (https://firebase.google.com/docs/projects/learn-more#config-files-objects). For instance, file as `google-services.json` can be versionned in our github repository. If you add this kind of file, please share the word on our security channel.
 
