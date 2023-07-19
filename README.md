@@ -188,6 +188,10 @@ Let the formatters do their jobs.
 
 For any new component in our codebase, we prefer using [functional component](https://github.com/tatethurston/eslint-plugin-react-prefer-function-component#motivation=)
 
+## Prefer export over export default
+
+For exporting new component in our codebase, we prefet using `export { ComponentName }` over `export default ComponentName`. This makes maintenance easier by making renaming more explicit when importing.
+
 ## React Memo
 
 Usage of React.memo / useMemo / useCallback is quite tricky. We recommend to [use React.memo wisely](https://dmitripavlutin.com/use-react-memo-wisely/).
